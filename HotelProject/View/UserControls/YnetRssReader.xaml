@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="HotelProject.View.UserControls.YnetRssReader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelProject.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="100">
+    <UserControl.Resources>
+        <XmlDataProvider x:Key="DataRss" XPath="//item" Source="http://www.ynet.co.il/Integration/StoryRss1854.xml"/>
+        <LinearGradientBrush x:Key="SidePanelBackground" StartPoint="0,0.5" EndPoint="1,0.5">
+            <GradientStop Color="AliceBlue" Offset="0" />
+            <GradientStop Color="Orange" Offset="0.5" />
+            <GradientStop Color="DarkSeaGreen" Offset="1" />
+        </LinearGradientBrush>
+
+    </UserControl.Resources>
+    <Grid Background="#E8D1C5">
+        <ListBox HorizontalAlignment="Center"
+                 ItemsSource="{Binding Source={StaticResource DataRss}}"
+                 Background="{StaticResource SidePanelBackground}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FlowDirection="RightToLeft" 
+                               Width="150"
+                               HorizontalAlignment="Center"
+                               Text="{Binding XPath=title}" FontWeight="Bold" FontSize="12" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

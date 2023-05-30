@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="HotelProject.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelProject.View"
+             xmlns:uc="clr-namespace:HotelProject.View.UserControls"
+             xmlns:converters="clr-namespace:HotelProject.View.Helpers.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="Blocks" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Hotel Management Program"
+                       HorizontalAlignment="Center"
+                       FontSize="30"
+                       Margin="20"/>
+            <StackPanel x:Name="Login"
+                        Visibility="{Binding IsLoggedIn,Converter={converters:BoolVisibilityNotConverter}}">
+                <Image Source="{Binding LogoPath}"
+                       Height="50"/>
+                <TextBlock Text="Login"
+                           Style="{StaticResource Blocks}"/>
+                <TextBox 
+                    Text="{Binding LoginString,Mode=OneWayToSource,UpdateSourceTrigger=Default}"
+                    Width="150"
+                FontSize="20"/>
+                <TextBlock Style="{StaticResource Blocks}"
+                       Text="Password"/>
+                <uc:BindablePasswordBox
+                Password="{Binding PasswordString}"
+                Width="150"
+                FontSize="20"/>
+                <Button Content="Login" Width="150"
+                    Margin="50"
+                    FontSize="20"
+                    Command="{Binding LoginCommand}"/>
+            </StackPanel>
+            <StackPanel x:Name="Logout"
+            Visibility="{Binding IsLoggedIn,Converter={converters:BoolVisibilityConverter}}">
+                <Button Content="Logout"
+                        Width="150"
+                        Margin="50"
+                        FontSize="20"
+                        Command="{Binding LogoutCommand}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

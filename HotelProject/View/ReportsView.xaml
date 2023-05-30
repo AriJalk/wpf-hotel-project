@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="HotelProject.View.ReportsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelProject.View"
+             xmlns:converters="clr-namespace:HotelProject.View.Helpers.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="ButtonBackground" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#FFD9EDFF" Offset="0"/>
+            <GradientStop Color="#FFC0DEFF" Offset="0.445"/>
+            <GradientStop Color="#FFAFD1F8" Offset="0.53"/>
+        </LinearGradientBrush>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="Global Reports"/>
+            <Button Content="All Reservations"
+                    Command="{Binding AllReservationsReportCommand}"/>
+            <Button Content="All Customers"
+                    Command="{Binding AllCustomersReportCommand}"/>
+            <Button Content="All Rooms"
+                    Command="{Binding AllRoomsReportCommand}"/>
+            <Button Content="All Floors"
+                    Command="{Binding AllFloorsReportCommand}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Specific Reports"/>
+            <StackPanel Visibility="Collapsed">
+                <TextBlock Text="Room Number"/>
+                <TextBlock Text="{Binding SelectedRoom,Converter={converters:NumberedElementConverter}}"/>
+                <Button Content="Reservations By Room"/>
+            </StackPanel>
+            <StackPanel
+                Visibility="Collapsed">
+                <TextBlock Text="Floor Number"/>
+                <TextBlock Text="{Binding SelectedFloor,Converter={converters:NumberedElementConverter}}"/>
+                <Button Content="Reservations By Floor"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Selected Customer: "/>
+                <TextBlock Text="{Binding Path=SelectedCustomer,Converter={converters:PersonNameConverter}}"/>
+            </StackPanel>
+            <Button Content="Reservations By Customer"
+                    Command="{Binding ReservationsByCustomerCommand}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

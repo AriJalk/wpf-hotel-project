@@ -1,0 +1,321 @@
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\bin\x64\Debug\HotelProject.exe.config
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\bin\x64\Debug\HotelProject.exe
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\bin\x64\Debug\HotelProject.pdb
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.AssemblyReference.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\MainWindow.g.cs
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\App.g.cs
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.lref
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\MainWindow.baml
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject.g.resources
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject.Properties.Resources.resources
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.GenerateResource.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.CoreCompileInputs.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject.exe
+E:\Users\xberu\Desktop\HotelProject\HotelProject-20220831T085750Z-001\HotelProject\HotelProject\obj\x64\Debug\HotelProject.pdb
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\bin\x64\Debug\HotelProject.exe.config
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\bin\x64\Debug\HotelProject.exe
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\bin\x64\Debug\HotelProject.pdb
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.AssemblyReference.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\MainWindow.g.cs
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\App.g.cs
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.lref
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\MainWindow.baml
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject.g.resources
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject.Properties.Resources.resources
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.GenerateResource.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.CoreCompileInputs.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject.exe
+E:\Users\xberu\Desktop\HotelProject\HotelProject\HotelProject\obj\x64\Debug\HotelProject.pdb
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\bin\x64\Debug\HotelProject.exe.config
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\bin\x64\Debug\HotelProject.exe
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\bin\x64\Debug\HotelProject.pdb
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject.csproj.AssemblyReference.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\MainWindow.g.cs
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\App.g.cs
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.lref
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\MainWindow.baml
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject.g.resources
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject.Properties.Resources.resources
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject.csproj.GenerateResource.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject.csproj.CoreCompileInputs.cache
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject.exe
+E:\Users\xberu\Desktop\HotelProject\HotelProject 010922\HotelProject\obj\x64\Debug\HotelProject.pdb
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject.csproj.AssemblyReference.cache
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\MainWindow.g.cs
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\View\FloorTest2.g.cs
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\View\UserControls\DisplayFloor.g.cs
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\View\UserControls\DisplayRoom.g.cs
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\App.g.cs
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.cache
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.lref
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\MainWindow.baml
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\View\FloorTest2.baml
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\View\UserControls\DisplayFloor.baml
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\View\UserControls\DisplayRoom.baml
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject.exe
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject.pdb
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\View\FloorsWindowSomething.g.cs
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\HotelProject.exe.config
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\HotelProject.exe
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\HotelProject.pdb
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Microsoft.Xaml.Behaviors.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Newtonsoft.Json.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Xceed.Wpf.AvalonDock.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Xceed.Wpf.Toolkit.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Microsoft.Xaml.Behaviors.xml
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\Newtonsoft.Json.xml
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\bin\x64\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\View\FloorsWindowSomething.baml
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject.g.resources
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject.Properties.Resources.resources
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject.csproj.GenerateResource.cache
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject.csproj.CoreCompileInputs.cache
+D:\Users\Ariel\source\repos\HotelProject - Copy\HotelProject\obj\x64\Debug\HotelProject.csproj.CopyComplete
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.AssemblyReference.cache
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\ApplicationView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\CustomersView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\DbManagementView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\FloorView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\HomeView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\ReportsView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\ServicesView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\AnalogClockView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\DisplayFloorMini.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\DisplayRoomFullView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\DisplayRoomReservations.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\DisplayRoomMini.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\YnetRssReader.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UsersView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\App.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.cache
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject_MarkupCompile.lref
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\TransactionsView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\HotelProject.exe.config
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\HotelProject.exe
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\HotelProject.pdb
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\IronPdf.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\Newtonsoft.Json.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\Xceed.Wpf.AvalonDock.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\Xceed.Wpf.Toolkit.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\IronPdf.xml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\Newtonsoft.Json.xml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\ApplicationView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\CustomersView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\DbManagementView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\FloorView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\HomeView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\ReportsView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\ServicesView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\TransactionsView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\AnalogClockView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\DisplayFloorMini.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\DisplayRoomFullView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\DisplayRoomReservations.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\DisplayRoomMini.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UserControls\YnetRssReader.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\UsersView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject.g.resources
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject.Properties.Resources.resources
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.GenerateResource.cache
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.CoreCompileInputs.cache
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject.csproj.CopyComplete
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject.exe
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\HotelProject.pdb
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\CreditCardView.g.cs
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\View\CreditCardView.baml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\chrome_100_percent.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\chrome_200_percent.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\chrome_elf.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\concrt140.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\d3dcompiler_47.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\dxva2.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\icudtl.dat
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\IronCefSubprocess.exe
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\IronInterop.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\IronPdf.Native.Chrome.deployment.json
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\libcef.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\libEGL.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\libGLESv2.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\af.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\am.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ar.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\bg.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\bn.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ca.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\cs.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\da.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\de.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\el.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\en-GB.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\en-US.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\es-419.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\es.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\et.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\fa.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\fi.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\fil.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\fr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\gu.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\he.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\hi.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\hr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\hu.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\id.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\it.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ja.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\kn.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ko.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\lt.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\lv.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ml.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\mr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ms.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\nb.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\nl.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\pl.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\pt-BR.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\pt-PT.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ro.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ru.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\sk.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\sl.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\sr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\sv.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\sw.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ta.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\te.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\th.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\tr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\uk.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\ur.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\vi.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\zh-CN.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\locales\zh-TW.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\msvcp140.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\msvcp140_1.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\msvcp140_2.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\msvcp140_atomic_wait.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\msvcp140_codecvt_ids.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\resources.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\snapshot_blob.bin
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\ucrtbase.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\v8_context_snapshot.bin
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\vcruntime140.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\vcruntime140_1.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\vk_swiftshader.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x64\native\vulkan-1.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\chrome_100_percent.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\chrome_200_percent.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\chrome_elf.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\concrt140.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\d3dcompiler_47.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\dxva2.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\icudtl.dat
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\IronCefSubprocess.exe
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\IronInterop.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\IronPdf.Native.Chrome.deployment.json
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\libcef.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\libEGL.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\libGLESv2.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\af.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\am.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ar.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\bg.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\bn.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ca.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\cs.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\da.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\de.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\el.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\en-GB.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\en-US.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\es-419.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\es.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\et.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\fa.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\fi.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\fil.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\fr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\gu.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\he.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\hi.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\hr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\hu.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\id.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\it.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ja.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\kn.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ko.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\lt.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\lv.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ml.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\mr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ms.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\nb.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\nl.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\pl.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\pt-BR.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\pt-PT.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ro.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ru.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\sk.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\sl.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\sr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\sv.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\sw.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ta.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\te.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\th.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\tr.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\uk.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\ur.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\vi.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\zh-CN.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\locales\zh-TW.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\msvcp140.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\msvcp140_1.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\msvcp140_2.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\msvcp140_atomic_wait.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\msvcp140_codecvt_ids.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\resources.pak
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\snapshot_blob.bin
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\ucrtbase.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\v8_context_snapshot.bin
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\vcruntime140.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\vk_swiftshader.dll
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\bin\x64\Debug\runtimes\win-x86\native\vulkan-1.dll

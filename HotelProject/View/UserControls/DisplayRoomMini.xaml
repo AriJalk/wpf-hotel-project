@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="HotelProject.View.UserControls.DisplayRoomMini"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelProject.View.UserControls"
+             xmlns:vm="clr-namespace:HotelProject.ViewModel"
+             xmlns:conv="clr-namespace:HotelProject.View.Helpers.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="200">
+    <UserControl.Resources>
+        <conv:RoomBackgroundConverter x:Key="RoomBackgroundConverter"/>
+        <conv:RoomAvailableConverter x:Key="RoomAvailableConverter"/>
+        <Style TargetType="TextBlock">
+            
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="5">
+        <Rectangle Fill="{Binding RoomTypeId,Converter={StaticResource RoomBackgroundConverter}}"
+                   Stroke="{Binding IsRoomAvailable,Converter={StaticResource RoomAvailableConverter}}"
+                   StrokeThickness="3"
+                   RadiusX="5"
+                   RadiusY="5"/>
+        <StackPanel>
+            <TextBlock Text="{Binding ElementNumber, FallbackValue=Room}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+            <DockPanel HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom">
+                <TextBlock Text="{Binding Room.MaxCapacity}"
+                           DockPanel.Dock="Bottom"
+                           FontSize="10"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Capacity"
+                           DockPanel.Dock="Top"
+                           FontSize="10"/>
+            </DockPanel>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

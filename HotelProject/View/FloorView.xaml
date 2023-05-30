@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="HotelProject.View.FloorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:HotelProject.View"
+             xmlns:vm="clr-namespace:HotelProject.ViewModel"
+             xmlns:uc="clr-namespace:HotelProject.View.UserControls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:converters="clr-namespace:HotelProject.View.Helpers.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:BoolVisibilityConverter x:Key="VisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="8*">
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="ParametersStackPanel"
+                    Grid.Column="0">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="Check In"/>
+            <DatePicker SelectedDate="{Binding SelectedStartDate, Mode=TwoWay}"
+                        Margin="10"/>
+            <xctk:TimePicker Value="{Binding SelectedStartTime, Mode=TwoWay}"
+                             Height="20" Width="80"
+                             Margin="5"/>
+
+            <TextBlock Text="Check Out"/>
+            <DatePicker SelectedDate="{Binding SelectedEndDate, Mode=TwoWay}"
+                        Margin="10"/>
+            <xctk:TimePicker Value="{Binding SelectedEndTime, Mode=TwoWay}"
+                             Height="20" Width="80"
+                             Margin="5"/>
+            <TextBlock Text="Number of people"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <TextBox Text="{Binding PeopleCount,UpdateSourceTrigger=PropertyChanged}" Width="50"
+                         IsReadOnly="True"/>
+                <Button Content="Up" Command="{Binding UpTextBlockCommand}" CommandParameter="{Binding PeopleCount}"/>
+                <Button Content="Down" Command="{Binding DownTextBlockCommand}" CommandParameter="{Binding PeopleCount}"/>
+            </StackPanel>
+            <ComboBox x:Name="Lodging"
+                      ItemsSource="{Binding Path=LodgingTypes}"
+                      SelectedItem="{Binding SelectedLodging}"/>
+            <CheckBox Content="Display Not Active"
+                      IsChecked="{Binding IsUnavailableChecked}"
+                      Margin="10"/>
+            <StackPanel x:Name="ManagerPanel">
+                <TextBlock Text="Manager Panel"
+                           Margin="10"
+                           Visibility="{Binding Path=AppVm.Globals.User,Converter={converters:UserVisibilityConverter}}"/>
+            </StackPanel>
+        </StackPanel>
+        <ListView 
+            x:Name="FloorListView"
+            Grid.Column="1"
+            ItemsSource="{Binding FloorCollectionView}"
+            SelectedValue="{Binding SelectedFloor}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <uc:DisplayFloorMini DataContext="{Binding}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Column="2">
+            <ListView x:Name="RowsList"
+                      ItemsSource="{Binding VmRows}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Focusable" Value="False"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ListView x:Name="RoomRowList"
+                                  ItemsSource="{Binding CollectionView}"
+                                  SelectedValue="{Binding Path=ParentVm.SelectedRoomMiniVM}">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListViewItem}">
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"
+                                                CanHorizontallyScroll="True">
+                                    </StackPanel>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <uc:DisplayRoomMini DataContext="{Binding}" Width="75" Height="75"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid x:Name="SelectedRoom"
+                  Visibility="{Binding IsRoomSelected,Converter={StaticResource VisibilityConverter}}">
+                <uc:DisplayRoomFullView DataContext="{Binding SelectedRoomFullVM}"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

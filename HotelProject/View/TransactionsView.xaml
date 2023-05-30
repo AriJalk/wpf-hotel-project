@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="HotelProject.View.TransactionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:converters="clr-namespace:HotelProject.View.Helpers.Converters"
+             xmlns:local="clr-namespace:HotelProject.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <sys:Double x:Key="Size">90</sys:Double>
+        <local:BindingProxy x:Key="proxy" Data="{Binding}"/>
+        <LinearGradientBrush x:Key="TableBackground" StartPoint="0,0.5" EndPoint="1,0.5">
+            <GradientStop Color="AliceBlue" Offset="0" />
+            <GradientStop Color="PaleGreen" Offset="0.5" />
+            <GradientStop Color="DarkTurquoise" Offset="1" />
+        </LinearGradientBrush>
+        <Style x:Key="TableStyle" 
+               TargetType="DataGrid">
+            <Setter Property="Background" Value="{StaticResource TableBackground}"/>
+            <Style.Resources>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="White"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.25*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="TransactionsGrid"
+                  Style="{StaticResource TableStyle}"
+                  Grid.Column="0"
+                    MaxHeight="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=ActualHeight,
+                    Converter={converters:WindowSizeConverter},ConverterParameter={StaticResource Size}}"
+                    HorizontalAlignment="Center"
+                    Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=ActualHeight,
+                    Converter={converters:WindowSizeConverter},ConverterParameter={StaticResource Size}}"
+                    ItemsSource="{Binding TransactionCollection}"
+                    AutoGenerateColumns="False"
+                    SelectedItem="{Binding SelectedTransaction, TargetNullValue={x:Static CollectionView.NewItemPlaceholder}}"
+                    ScrollViewer.CanContentScroll="True"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    CanUserAddRows="False"
+                  CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#"
+                                    Binding="{Binding TransactionId}"
+                                    IsReadOnly="True"/>
+                
+                <DataGridTextColumn Header="Reservation"
+                                    Binding="{Binding RoomReservationId}"
+                                    IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Is Validated"
+                                    Binding="{Binding IsValidated}"
+                                        IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Is Payed"
+                                    Binding="{Binding IsPayed}"
+                                        IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Is Refunded"
+                                    Binding="{Binding IsRefunded}"
+                                        IsReadOnly="True"/>
+                <DataGridTextColumn Header="CreatedTime"
+                                            Binding="{Binding CreatedTime, Mode=OneWay}"
+                                            IsReadOnly="True"
+                                            Visibility="Collapsed"/>
+                <DataGridTextColumn Header="Customer"
+                                    Binding="{Binding Customer,Converter={converters:PersonNameConverter}}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="People #"
+                                    Binding="{Binding Path=RoomReservation.PeopleCount}"
+                                    IsReadOnly="True"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Refund"
+                                    Command="{Binding Data.RefundCommand,Source={StaticResource proxy}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="PartsGrid"
+                  Style="{StaticResource TableStyle}"
+                  Grid.Column="1"
+                  MaxHeight="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=ActualHeight,
+            Converter={converters:WindowSizeConverter},ConverterParameter={StaticResource Size}}"
+                  HorizontalAlignment="Center"
+                  Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=ActualHeight,
+            Converter={converters:WindowSizeConverter},ConverterParameter={StaticResource Size}}"
+                  ItemsSource="{Binding Path=SelectedTransaction.TransactionPartList}"
+                  AutoGenerateColumns="False"
+                  SelectedItem="{Binding SelectedPart, TargetNullValue={x:Static CollectionView.NewItemPlaceholder}}"
+                  ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  CanUserDeleteRows="False"
+                  CanUserAddRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Part #"
+                                    Binding="{Binding TransactionPartId}"/>
+                <DataGridTextColumn Header="Service Name"
+                                    Binding="{Binding Path=Service.Name}"/>
+                <DataGridTextColumn Header="Price"
+                                    Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="CreatedTime"
+                                            Binding="{Binding CreatedTime, Mode=OneWay}"
+                                            IsReadOnly="True"
+                                            Visibility="Collapsed"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FAD3F75C-D52E-436A-8876-C7B6F11BF175}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HotelProject</RootNamespace>
+    <AssemblyName>HotelProject</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf, Version=2022.9.0.9056, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.Slim.2022.9.9056\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\BaseClasses\HotelDbElementBase.cs" />
+    <Compile Include="Model\BaseClasses\Element.cs" />
+    <Compile Include="Model\BaseClasses\HotelNumberedElementBase.cs" />
+    <Compile Include="Model\BaseClasses\HotelNamedElementBase.cs" />
+    <Compile Include="Model\BaseClasses\Person.cs" />
+    <Compile Include="Model\DbClasses\Customer.cs" />
+    <Compile Include="Model\FileClasses\HotelGlobalParameters.cs" />
+    <Compile Include="Model\DbClasses\ServiceGroup.cs" />
+    <Compile Include="Model\DbClasses\Transaction.cs" />
+    <Compile Include="Model\OtherClasses\ClockPart.cs" />
+    <Compile Include="ViewModel\AnalogClockVM.cs" />
+    <Compile Include="ViewModel\Commands\CreditCardCommand\PayCommand.cs" />
+    <Compile Include="ViewModel\Commands\Db Operations\ReadUpdateCommand.cs" />
+    <Compile Include="ViewModel\Commands\DeactivateCommand.cs" />
+    <Compile Include="ViewModel\Commands\DownTextBlockCommand.cs" />
+    <Compile Include="ViewModel\Commands\FloorRoomCommand\NewRoomCommand.cs" />
+    <Compile Include="ViewModel\Commands\FloorRoomCommand\NewFloorCommand.cs" />
+    <Compile Include="ViewModel\Commands\LoginCommand.cs" />
+    <Compile Include="ViewModel\Commands\LogoutCommand.cs" />
+    <Compile Include="ViewModel\Commands\RefreshCommand.cs" />
+    <Compile Include="ViewModel\Commands\Reports\AllFloorsReportCommand.cs" />
+    <Compile Include="ViewModel\Commands\Reports\AllRoomsReportCommand.cs" />
+    <Compile Include="ViewModel\Commands\Reports\AllCustomersReportCommand.cs" />
+    <Compile Include="ViewModel\Commands\Reports\AllReservationsReportCommand.cs" />
+    <Compile Include="ViewModel\Commands\Reports\ReservationsByCustomerCommand.cs" />
+    <Compile Include="ViewModel\Commands\ResetPasswordCommand.cs" />
+    <Compile Include="ViewModel\Commands\RoomCommands\NewReservationCommand.cs" />
+    <Compile Include="ViewModel\Commands\TransactionCommands\RefundCommand.cs" />
+    <Compile Include="ViewModel\Commands\UpTextBlockCommand.cs" />
+    <Compile Include="ViewModel\CreditCardViewVM.cs" />
+    <Compile Include="ViewModel\CustomersViewVM.cs" />
+    <Compile Include="ViewModel\DisplayRoomFullVM.cs" />
+    <Compile Include="ViewModel\EditFloorRoomViewVM.cs" />
+    <Compile Include="ViewModel\Helpers\Converters.cs" />
+    <Compile Include="ViewModel\Helpers\DbManagementMethods.cs" />
+    <Compile Include="Model\Helpers\HotelEnums.cs" />
+    <Compile Include="Model\Helpers\TableData.cs" />
+    <Compile Include="Model\DbClasses\RoomType.cs" />
+    <Compile Include="Model\DbClasses\TransactionPart.cs" />
+    <Compile Include="Model\DbClasses\User.cs" />
+    <Compile Include="Model\DbClasses\RoomReservation.cs" />
+    <Compile Include="Model\DbClasses\UserType.cs" />
+    <Compile Include="Model\Interfaces\IIncremented.cs" />
+    <Compile Include="Model\Interfaces\ISqlElement.cs" />
+    <Compile Include="ViewModel\ApplicationViewModel.cs" />
+    <Compile Include="ViewModel\Helpers\Pdf\HtmlReports.cs" />
+    <Compile Include="ViewModel\ReportsViewVM.cs" />
+    <Compile Include="ViewModel\TransactionsViewVM.cs" />
+    <Compile Include="ViewModel\UserViewVM.cs" />
+    <Compile Include="View\BindingProxy.cs" />
+    <Compile Include="ViewModel\Commands\DbManagement\CreateTableCommand.cs" />
+    <Compile Include="ViewModel\Commands\DbManagement\DeleteAllTablesCommand.cs" />
+    <Compile Include="ViewModel\Commands\RelayCommand.cs" />
+    <Compile Include="ViewModel\DisplayFloorMiniVM.cs" />
+    <Compile Include="ViewModel\FloorsViewVM.cs" />
+    <Compile Include="ViewModel\Globals.cs" />
+    <Compile Include="ViewModel\HomeViewVM.cs" />
+    <Compile Include="ViewModel\Interfaces\IPageViewModel.cs" />
+    <Compile Include="ViewModel\ServicesViewVM.cs" />
+    <Compile Include="View\ApplicationView.xaml.cs">
+      <DependentUpon>ApplicationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CreditCardView.xaml.cs">
+      <DependentUpon>CreditCardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomersView.xaml.cs">
+      <DependentUpon>CustomersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DbManagementView.xaml.cs">
+      <DependentUpon>DbManagementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditFloorRoomView.xaml.cs">
+      <DependentUpon>EditFloorRoomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FloorView.xaml.cs">
+      <DependentUpon>FloorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Helpers\Converters\BoolNotConverter.cs" />
+    <Compile Include="View\Helpers\Converters\IsManagerNotConverter.cs" />
+    <Compile Include="View\Helpers\Converters\NumberedElementConverter.cs" />
+    <Compile Include="View\Helpers\Converters\PersonNameConverter.cs" />
+    <Compile Include="View\Helpers\Converters\PersonToFNameConverter.cs" />
+    <Compile Include="View\Helpers\Converters\RoomAvailableConverter.cs" />
+    <Compile Include="View\Helpers\Converters\RoomBackgroundConverter.cs" />
+    <Compile Include="ViewModel\Helpers\SqlDatabaseHelper.cs" />
+    <Compile Include="ViewModel\Helpers\PasswordHelper.cs" />
+    <Compile Include="ViewModel\Helpers\ObjectFileHelper.cs" />
+    <Compile Include="ViewModel\DisplayRoomMiniVM.cs" />
+    <Compile Include="ViewModel\Containers\RoomRowVmContainer.cs" />
+    <Compile Include="ViewModel\Bases\ViewModelBase.cs" />
+    <Compile Include="View\Helpers\Converters\IsManagerConverter.cs" />
+    <Compile Include="View\Helpers\Converters\BoolVisibilityConverter.cs" />
+    <Compile Include="View\Helpers\Converters\ServiceToNameConverter.cs" />
+    <Compile Include="View\Helpers\Converters\RoomTypeConverter.cs" />
+    <Compile Include="View\Helpers\Converters\UserTypeConverter.cs" />
+    <Compile Include="View\Helpers\Converters\WindowSizeConverter.cs" />
+    <Compile Include="View\Helpers\Converters\UserVisibilityConverter.cs" />
+    <Compile Include="ViewModel\DbManagementViewVM.cs" />
+    <Compile Include="View\Helpers\Converters\BoolVisibilityNotConverter.cs" />
+    <Compile Include="ViewModel\Helpers\EnumBindingSourceExtension.cs" />
+    <Compile Include="View\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReportsView.xaml.cs">
+      <DependentUpon>ReportsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ServicesView.xaml.cs">
+      <DependentUpon>ServicesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransactionsView.xaml.cs">
+      <DependentUpon>TransactionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\AnalogClockView.xaml.cs">
+      <DependentUpon>AnalogClockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\BindablePasswordBox.xaml.cs">
+      <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\DisplayFloorMini.xaml.cs">
+      <DependentUpon>DisplayFloorMini.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\DisplayRoomFullView.xaml.cs">
+      <DependentUpon>DisplayRoomFullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\DisplayRoomReservations.xaml.cs">
+      <DependentUpon>DisplayRoomReservations.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\DisplayRoomMini.xaml.cs">
+      <DependentUpon>DisplayRoomMini.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\YnetRssReader.xaml.cs">
+      <DependentUpon>YnetRssReader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UsersView.xaml.cs">
+      <DependentUpon>UsersView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\ApplicationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CreditCardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DbManagementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditFloorRoomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FloorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReportsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TransactionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\AnalogClockView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\DisplayFloorMini.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\DisplayRoomFullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\DisplayRoomReservations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\DisplayRoomMini.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\YnetRssReader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\DbClasses\Floor.cs" />
+    <Compile Include="Model\DbClasses\Room.cs" />
+    <Compile Include="Model\DbClasses\Service.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\Service\" />
+    <Folder Include="View\UserControls\Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\IronPdf.Native.Chrome.Windows.2022.9.9049\build\net452\IronPdf.Native.Chrome.Windows.targets" Condition="Exists('..\packages\IronPdf.Native.Chrome.Windows.2022.9.9049\build\net452\IronPdf.Native.Chrome.Windows.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\IronPdf.Native.Chrome.Windows.2022.9.9049\build\net452\IronPdf.Native.Chrome.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronPdf.Native.Chrome.Windows.2022.9.9049\build\net452\IronPdf.Native.Chrome.Windows.targets'))" />
+  </Target>
+</Project>

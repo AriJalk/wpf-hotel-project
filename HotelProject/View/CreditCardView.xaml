@@ -1,0 +1,39 @@
+﻿<Window x:Class="HotelProject.View.CreditCardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelProject.View"
+        mc:Ignorable="d"
+        Title="CreditCardView" Height="450" Width="450">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Total: "/>
+            <TextBlock Text="{Binding Total}"/>
+            <TextBlock Text="Credit Number"/>
+            <TextBox Text="{Binding CreditCardNumber}"/>
+            <TextBlock Text="Holder Id"/>
+            <TextBox Text="{Binding HolderId}"/>
+            <TextBlock Text="Expiration"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Width="20"
+                         Text="{Binding Month}"/>
+                <TextBox Width="30"
+                         Text="{Binding Year}"/>
+            </StackPanel>
+            <TextBlock Text="CCV"/>
+            <TextBox Width="20"
+                     Text="{Binding CCV}"/>
+            <Button Content="Pay"
+                    Command="{Binding PayCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>
