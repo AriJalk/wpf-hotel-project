@@ -13,9 +13,13 @@
     <Grid>
         <StackPanel>
             <Button Content="Build Tables"
-                    Command="{Binding CreateTable}"/>
+                    Command="{Binding CreateTable}"
+                    IsEnabled="False"/>
             <Button Content="Delete All Tables"
-                    Command="{Binding DeleteAllTables}"/>
+                    Command="{Binding DeleteAllTables}"
+                    IsEnabled="False"/>
+            <Button Content="Backup DB"
+                    Command="{Binding BackupCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

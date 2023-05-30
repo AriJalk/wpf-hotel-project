@@ -26,41 +26,51 @@
             <Setter Property="Margin" Value="5"/>
         </Style>
     </UserControl.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <TextBlock Text="Global Reports"/>
-            <Button Content="All Reservations"
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <TextBlock Text="Report Start Date"/>
+            <DatePicker Margin="5"
+                        SelectedDate="{Binding StartDate, Mode=TwoWay}"/>
+            <TextBlock Text="Report End Date"/>
+            <DatePicker Margin="5"
+                        SelectedDate="{Binding EndDate,Mode=TwoWay}"/>
+        </StackPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Global Reports"/>
+                <Button Content="All Reservations"
                     Command="{Binding AllReservationsReportCommand}"/>
-            <Button Content="All Customers"
+                <Button Content="All Customers"
                     Command="{Binding AllCustomersReportCommand}"/>
-            <Button Content="All Rooms"
+                <Button Content="All Rooms"
                     Command="{Binding AllRoomsReportCommand}"/>
-            <Button Content="All Floors"
+                <Button Content="All Floors"
                     Command="{Binding AllFloorsReportCommand}"/>
-        </StackPanel>
-        <StackPanel Grid.Column="1">
-            <TextBlock Text="Specific Reports"/>
-            <StackPanel Visibility="Collapsed">
-                <TextBlock Text="Room Number"/>
-                <TextBlock Text="{Binding SelectedRoom,Converter={converters:NumberedElementConverter}}"/>
-                <Button Content="Reservations By Room"/>
             </StackPanel>
-            <StackPanel
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Specific Reports"/>
+                <StackPanel Visibility="Collapsed">
+                    <TextBlock Text="Room Number"/>
+                    <TextBlock Text="{Binding SelectedRoom,Converter={converters:NumberedElementConverter}}"/>
+                    <Button Content="Reservations By Room"/>
+                </StackPanel>
+                <StackPanel
                 Visibility="Collapsed">
-                <TextBlock Text="Floor Number"/>
-                <TextBlock Text="{Binding SelectedFloor,Converter={converters:NumberedElementConverter}}"/>
-                <Button Content="Reservations By Floor"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Selected Customer: "/>
-                <TextBlock Text="{Binding Path=SelectedCustomer,Converter={converters:PersonNameConverter}}"/>
-            </StackPanel>
-            <Button Content="Reservations By Customer"
+                    <TextBlock Text="Floor Number"/>
+                    <TextBlock Text="{Binding SelectedFloor,Converter={converters:NumberedElementConverter}}"/>
+                    <Button Content="Reservations By Floor"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Selected Customer: "/>
+                    <TextBlock Text="{Binding Path=SelectedCustomer,Converter={converters:PersonNameConverter}}"/>
+                </StackPanel>
+                <Button Content="Reservations By Customer"
                     Command="{Binding ReservationsByCustomerCommand}"/>
-        </StackPanel>
-    </Grid>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
 </UserControl>

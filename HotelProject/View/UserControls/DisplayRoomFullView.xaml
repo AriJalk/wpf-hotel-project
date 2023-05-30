@@ -59,16 +59,21 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="Check-Out Time"/>
+                    <TextBlock Text="{Binding EndTime}"/>
                 </StackPanel>
             </StackPanel>
             <ListView
                 MinHeight="10"
-                ItemsSource="{Binding TransactionPartList}">
+                ItemsSource="{Binding TransactionPartList}"
+                ScrollViewer.CanContentScroll="False"
+                ScrollViewer.VerticalScrollBarVisibility="Visible"
+                MaxHeight="200">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding Path=Service.Name}"/>
-                            <TextBox Text="{Binding Path=Price}"/>
+                            <TextBox Text="{Binding Path=Price,Converter={converters:PriceConverter}}"
+                                     IsReadOnly="True"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

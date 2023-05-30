@@ -49,8 +49,8 @@ namespace HotelProject.ViewModel
         public ObservableCollection<TransactionPart> PartList
         {
             get { return _partlist; }
-            set 
-            { 
+            set
+            {
                 _partlist = value;
                 OnPropertyChanged("PartList");
             }
@@ -70,17 +70,20 @@ namespace HotelProject.ViewModel
                 //Save or revert object
                 if (_selectedtransaction != null)
                 {
-                    if (_selectedtransaction.ValidateData())
+                    if (_selectedtransaction.ValidateData() && _selectedtransaction.RoomReservation.ValidateData())
                     {
+
                         SqlDatabaseHelper.Insert(_selectedtransaction);
+                        SqlDatabaseHelper.Insert(_selectedtransaction.RoomReservation);
                         _selectedtransaction.IsInDb = true;
+
                     }
                     else
                     {
                         if (_selectedtransaction.IsInDb)
                         {
                             MessageBox.Show("Info not correct, reverting");
-                            _selectedtransaction = _backuptransaction;
+                            _selectedtransaction = new Transaction(_backuptransaction);
                             valid = false;
                             Refresh();
                         }
@@ -99,6 +102,10 @@ namespace HotelProject.ViewModel
                     _backuptransaction = new Transaction(value);
                     PartList = new ObservableCollection<TransactionPart>(_selectedtransaction.TransactionPartList);
                 }
+                if (value == null)
+                {
+                    _selectedtransaction = null;
+                }
                 OnPropertyChanged("SelectedTransaction");
             }
         }
@@ -108,10 +115,23 @@ namespace HotelProject.ViewModel
         public TransactionPart SelectedPart
         {
             get { return _selectedpart; }
-            set 
+            set
             {
                 _selectedpart = value;
                 OnPropertyChanged("SelectedPart");
+            }
+        }
+
+        private bool _isArchive;
+
+        public bool IsArchive
+        {
+            get { return _isArchive; }
+            set
+            {
+                _isArchive = value;
+                Refresh();
+                OnPropertyChanged("IsArchive");
             }
         }
 
@@ -135,8 +155,8 @@ namespace HotelProject.ViewModel
         public ICollectionView PartCollection
         {
             get { return _partcollection; }
-            set 
-            { 
+            set
+            {
                 _partcollection = value;
                 OnPropertyChanged("PartCollection");
             }
@@ -148,38 +168,132 @@ namespace HotelProject.ViewModel
         {
             get { return _refundcommand; }
             set
-            { 
+            {
                 _refundcommand = value;
                 OnPropertyChanged("RefundCommand");
+            }
+        }
+
+        private ArchiveTransactionsCommand _archiveTransactionsCommand;
+
+        public ArchiveTransactionsCommand ArchiveTransactionsCommand
+        {
+            get { return _archiveTransactionsCommand; }
+            set
+            {
+                _archiveTransactionsCommand = value;
+                OnPropertyChanged("ArchiveTransactionsCommand");
+            }
+        }
+
+        private bool _isfilter;
+
+        public bool IsFilter
+        {
+            get { return _isfilter; }
+            set
+            {
+                _isfilter = value;
+                OnPropertyChanged("IsFilter");
+                TransactionCollection.Refresh();
+                //Refresh();
+            }
+        }
+
+        private bool _isRegular;
+
+        public bool IsRegular
+        {
+            get { return _isRegular; }
+            set
+            {
+                _isRegular = value;
+                Refresh();
+                OnPropertyChanged("IsRegular");
+            }
+        }
+
+        private bool _isToday;
+
+        public bool IsToday
+        {
+            get { return _isToday; }
+            set
+            {
+                _isToday = value;
+                //Refresh();
+                OnPropertyChanged("IsToday");
+                TransactionCollection.Refresh();
+            }
+        }
+
+
+        private bool _isCustomerSelected;
+
+        public bool IsCustomerSelected
+        {
+            get { return _isCustomerSelected; }
+            set
+            {
+                _isCustomerSelected = value;
+                OnPropertyChanged("IsUserSelected");
             }
         }
 
 
         public TransactionsViewVM(ApplicationViewModel parentvm)
         {
-            AppVm = AppVm;
+            AppVm = parentvm;
         }
 
         private void InitializeVM()
         {
+            List<Transaction> transactionlist;
+            List<TransactionPart> partListTemp;
             //Load, read and join all relational data regarding transactions
-            List<RoomReservation> reservationlist = SqlDatabaseHelper.Read<RoomReservation>();
-            List<Transaction> transactionlist = SqlDatabaseHelper.Read<Transaction>();
-            List<TransactionPart> partListTemp = SqlDatabaseHelper.Read<TransactionPart>();
-            List<Customer> customerListTemp=SqlDatabaseHelper.Read<Customer>();
-            SqlDatabaseHelper.JoinDiscreteByInner(reservationlist, customerListTemp);
+            List<RoomReservation> reservationList = SqlDatabaseHelper.Read<RoomReservation>();
+
+            if (IsArchive)
+            {
+                if (IsRegular)
+                {
+                    transactionlist = SqlDatabaseHelper.Read<Transaction>();
+                    transactionlist.AddRange(SqlDatabaseHelper.ReadArchive<Transaction>());
+                    partListTemp = SqlDatabaseHelper.Read<TransactionPart>();
+                    partListTemp.AddRange(SqlDatabaseHelper.ReadArchive<TransactionPart>());
+                }
+                else
+                {
+                    transactionlist = SqlDatabaseHelper.ReadArchive<Transaction>();
+                    partListTemp = SqlDatabaseHelper.ReadArchive<TransactionPart>();
+                }
+            }
+            else
+            {
+                transactionlist = SqlDatabaseHelper.Read<Transaction>();
+                partListTemp = SqlDatabaseHelper.Read<TransactionPart>();
+            }
+
+            List<Customer> customerListTemp = SqlDatabaseHelper.Read<Customer>();
+            SqlDatabaseHelper.JoinDiscreteByInner(reservationList, customerListTemp);
             SqlDatabaseHelper.JoinLists(transactionlist, partListTemp);
-            SqlDatabaseHelper.JoinLists(reservationlist, transactionlist);
+            SqlDatabaseHelper.JoinLists(reservationList, transactionlist);
             SqlDatabaseHelper.JoinDiscreteByInner(transactionlist, SqlDatabaseHelper.Read<User>());
             List<Service> servicelist = SqlDatabaseHelper.Read<Service>();
             SqlDatabaseHelper.JoinDiscreteByInner(servicelist, SqlDatabaseHelper.Read<ServiceGroup>());
             SqlDatabaseHelper.JoinDiscreteByInnerOneWay(partListTemp, servicelist);
             SqlDatabaseHelper.JoinLists(transactionlist, partListTemp);
+            SqlDatabaseHelper.JoinDiscreteByInnerOneWay(reservationList, SqlDatabaseHelper.Read<Room>());
             TransactionList = new ObservableCollection<Transaction>(transactionlist);
             TransactionCollection = CollectionViewSource.GetDefaultView(transactionlist);
-            TransactionCollection.Filter = null;
+            if (AppVm.Globals.SelectedCustomer != null)
+                IsCustomerSelected = true;
+            else 
+                IsCustomerSelected = false;
+            TransactionCollection.Filter = Filter;
             SelectedTransaction = null;
             RefundCommand = new RefundCommand(this);
+            ArchiveTransactionsCommand = new ArchiveTransactionsCommand(this);
         }
 
         public void Refresh()
@@ -208,8 +322,45 @@ namespace HotelProject.ViewModel
                 SqlDatabaseHelper.Insert(SelectedTransaction.RoomReservation);
                 foreach (TransactionPart part in SelectedTransaction.TransactionPartList)
                     SqlDatabaseHelper.Insert(part);
-                Refresh();
+                TransactionCollection.Refresh();
             }
+        }
+
+        public void Archive()
+        {
+            foreach (Transaction transaction in TransactionList)
+                transaction.Archive();
+            Refresh();
+        }
+        
+        private bool Filter(object obj)
+        {
+            Transaction transaction = obj as Transaction;
+            if (!IsToday && !IsFilter)
+                return true;
+            if (IsToday)
+            {
+                if (IsFilter)
+                {
+                    if ((transaction.RoomReservation.StartTime.Date == DateTime.Today|| transaction.RoomReservation.StartTime.Date == DateTime.Today.AddDays(-1)) &&
+                        transaction.Customer.IdNumber == AppVm.Globals.SelectedCustomer.IdNumber)
+                        return true;
+                }
+                else
+                {
+                    if (transaction.RoomReservation.StartTime.Date == DateTime.Today|| transaction.RoomReservation.StartTime.Date == DateTime.Today.AddDays(-1))
+                        return true;
+                }
+            }
+            else
+            {
+                if (IsFilter)
+                {
+                    if (transaction.Customer.IdNumber==AppVm.Globals.SelectedCustomer.IdNumber)
+                        return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HotelProject.Model.DbClasses;
+using HotelProject.Model.OtherClasses;
 using HotelProject.View;
 using HotelProject.ViewModel.Commands.CreditCardCommand;
 using System;
@@ -109,34 +110,17 @@ namespace HotelProject.ViewModel
 
         public void Pay()
         {
-            _transaction.IsValidated = true;
-            _transaction.IsPayed = true;
-            _view.Close();
-            if (ValidateCard())
+            if (PaymentServiceDummy.ValidateCard(CreditCardNumber, _month, _year, _ccv))
             {
                 _transaction.IsPayed = true;
                 _view.Close();
             }
             else
-                MessageBox.Show("Credit Not Valid");
-        }
-        
-        private bool ValidateCard()
-        {
-            if (PaymentServiceDummy(CreditCardNumber, _month, _year, _ccv))
             {
-                _transaction.IsValidated = true;
-                return true;
+                _transaction.IsPayed = false;
+                MessageBox.Show("Credit Not Valid");
             }
 
-            return false;
-        }
-        //Dummy validation service
-        private bool PaymentServiceDummy(string creditCard, int month, int year, int ccv)
-        {
-            if (creditCard != string.Empty && month > 0 && month <= 12 && year >= DateTime.Now.Year && ccv > 0 && ccv < 1000)
-                return true;
-            return false;
-        }
+        }      
     }
 }

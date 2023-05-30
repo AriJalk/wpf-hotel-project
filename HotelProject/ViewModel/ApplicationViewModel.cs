@@ -121,6 +121,18 @@ namespace HotelProject.ViewModel
             set { _globals = value; }
         }
 
+        public Customer SelectedCustomer
+        {
+            get 
+            {
+                    return Globals.SelectedCustomer;
+            }
+            set 
+            {
+                Globals.SelectedCustomer = value;
+                OnPropertyChanged("SelectedCustomer");
+            }
+        }
 
 
         #endregion
@@ -141,6 +153,7 @@ namespace HotelProject.ViewModel
             PageViewModels.Add(new DbManagementViewVM());
             // Set starting page
             CurrentPageViewModel = PageViewModels[0];
+            SelectedCustomer = null;
         }
 
         #region Methods

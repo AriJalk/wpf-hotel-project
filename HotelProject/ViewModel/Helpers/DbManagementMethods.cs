@@ -107,7 +107,6 @@ namespace HotelProject.ViewModel.Helpers
             SqlDatabaseHelper.Insert(sg1);
             SqlDatabaseHelper.Insert(sg2);
             SqlDatabaseHelper.Insert(ari);
-
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
+//Template taken online for ViewModelBase
 namespace HotelProject.ViewModel
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
@@ -34,13 +35,13 @@ namespace HotelProject.ViewModel
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            Debug.WriteLine(propertyName + " CHANGED");
+            //Debug.WriteLine(propertyName + " CHANGED");
         }
 
         public virtual void OnPropertyChangedUserControl(object obj,string propertyName)
         {
             PropertyChanged?.Invoke(obj, new PropertyChangedEventArgs(propertyName));
-            Debug.WriteLine(propertyName + " CHANGED");
+            //Debug.WriteLine(propertyName + " CHANGED");
         }
 
         protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = "")

@@ -50,7 +50,8 @@
                     AutoGenerateColumns="False"
                     SelectedItem="{Binding SelectedCustomer, TargetNullValue={x:Static CollectionView.NewItemPlaceholder}}"
                     ScrollViewer.CanContentScroll="True"
-                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    SelectionMode="Single">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="First Name"
                                     Binding="{Binding FName}"/>
@@ -64,9 +65,6 @@
                                             Binding="{Binding CreatedTime, Mode=OneWay}"
                                             IsReadOnly="True"
                                             Visibility="Collapsed"/>
-                        <DataGridTextColumn Header="CustomerId"
-                                    Binding="{Binding CustomerId}"
-                                    IsReadOnly="True"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

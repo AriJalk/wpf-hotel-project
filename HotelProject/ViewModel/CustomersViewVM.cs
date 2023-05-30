@@ -45,7 +45,7 @@ namespace HotelProject.ViewModel
         {
             get { return Array.IndexOf(_modeArray, true); }
         }
-    
+
 
         private ObservableCollection<Customer> _customerlist;
         /// <summary>
@@ -74,16 +74,16 @@ namespace HotelProject.ViewModel
                 //Save or revert object
                 if (_selectedcustomer != null)
                 {
-                    if (_selectedcustomer.ValidateData())
+                    if (_selectedcustomer.ValidateData() && IsUnique(_selectedcustomer))
                     {
                         SqlDatabaseHelper.Insert(_selectedcustomer);
                         _selectedcustomer.IsInDb = true;
                     }
-                    else 
+                    else
                     {
+                        MessageBox.Show("Info not correct, reverting");
                         if (_selectedcustomer.IsInDb)
                         {
-                            MessageBox.Show("Info not correct, reverting");
                             _selectedcustomer = _backupcustomer;
                             valid = false;
                             Refresh();
@@ -95,27 +95,28 @@ namespace HotelProject.ViewModel
                             valid = false;
                             Refresh();
                         }
-                    }           
+                    }
                 }
                 if (value != null && valid)
                 {
                     _selectedcustomer = value;
                     _backupcustomer = new Customer(value);
                 }
-                if(_selectedcustomer!=null)
-                    AppVm.Globals.SelectedCustomer = _selectedcustomer;
+                if (_selectedcustomer != null)
+                    AppVm.SelectedCustomer = _selectedcustomer;
                 OnPropertyChanged("SelectedCustomer");
                 DeactivateCommand = new DeactivateCommand(this);
             }
         }
+
 
         private bool _showremoved = false;
 
         public bool ShowRemoved
         {
             get { return _showremoved; }
-            set 
-            { 
+            set
+            {
                 _showremoved = value;
                 OnPropertyChanged("ShowRemoved");
                 Refresh();
@@ -152,7 +153,7 @@ namespace HotelProject.ViewModel
             {
                 _searchstring = value;
                 OnPropertyChanged("PhoneString");
-                Refresh();
+                CustomerCollection.Refresh();
             }
         }
 
@@ -161,7 +162,7 @@ namespace HotelProject.ViewModel
         public RefreshCommand RefreshCommand
         {
             get { return _refreshCommand; }
-            set 
+            set
             {
                 _refreshCommand = value;
                 OnPropertyChanged("RefreshCommand");
@@ -173,8 +174,8 @@ namespace HotelProject.ViewModel
         public DeactivateCommand DeactivateCommand
         {
             get { return _deactivatecommand; }
-            set 
-            { 
+            set
+            {
                 _deactivatecommand = value;
                 OnPropertyChanged("DeactivateCommand");
             }
@@ -194,9 +195,9 @@ namespace HotelProject.ViewModel
             IList<Customer> list = SqlDatabaseHelper.Read<Customer>();
             CustomerList = new ObservableCollection<Customer>(list);
             CustomerCollection = CollectionViewSource.GetDefaultView(list);
-            if (SelectedMode==0)
+            if (SelectedMode == 0)
                 CustomerCollection.Filter = FilterPhone;
-            else if (SelectedMode==1)
+            else if (SelectedMode == 1)
                 CustomerCollection.Filter = FilterId;
             SelectedCustomer = null;
         }
@@ -255,6 +256,17 @@ namespace HotelProject.ViewModel
                 SelectedCustomer.IsActive = false;
             SqlDatabaseHelper.Insert(SelectedCustomer);
             Refresh();
+        }
+
+        bool IsUnique(Customer customer)
+        {
+            foreach (Customer other in CustomerList)
+            {
+                if (customer.Compare(other)) continue;
+                if (customer.PhoneNumber == other.PhoneNumber || customer.IdNumber == other.IdNumber)
+                    return false;
+            }
+            return true;
         }
     }
 }

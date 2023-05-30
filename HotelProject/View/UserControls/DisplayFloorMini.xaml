@@ -6,15 +6,16 @@
              xmlns:local="clr-namespace:HotelProject.View.UserControls"
              xmlns:vm="clr-namespace:HotelProject.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="100">
+             d:DesignHeight="100" d:DesignWidth="100"
+             MinHeight="60" MinWidth="60">
     <Grid Margin="5"
-          Background="#B36EEB">
+          Background="FloralWhite">
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="AntiqueWhite"/>
+                <Setter Property="Foreground" Value="DarkSlateGray"/>
             </Style>
         </Grid.Resources>
         <Rectangle
@@ -25,7 +26,6 @@
         <StackPanel
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
-            <TextBlock Text="Floor"/>
             <TextBlock Text="{Binding ElementNumber, FallbackValue=0}"/>
         </StackPanel>
     </Grid>

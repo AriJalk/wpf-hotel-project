@@ -121,6 +121,24 @@ namespace HotelProject.ViewModel
             }
         }
 
+        private DateTime _startdate;
+
+        public DateTime StartDate
+        {
+            get { return _startdate; }
+            set { _startdate = value; }
+        }
+
+        private DateTime _enddate;
+
+        public DateTime EndDate
+        {
+            get { return _enddate; }
+            set { _enddate = value; }
+        }
+
+
+
         public ReportsViewVM(ApplicationViewModel vm)
         {
             AppVm = vm;
@@ -128,6 +146,8 @@ namespace HotelProject.ViewModel
             AllCustomersReportCommand = new AllCustomersReportCommand(this);
             AllRoomsReportCommand = new AllRoomsReportCommand(this);
             AllFloorsReportCommand = new AllFloorsReportCommand(this);
+            StartDate = DateTime.Now.AddMonths(-6);
+            EndDate = DateTime.Now;
         }
 
 
@@ -135,9 +155,12 @@ namespace HotelProject.ViewModel
         public void AllReservationsReport()
         {
             //Load and merge all tables
-            List<RoomReservation> reservations = SqlDatabaseHelper.Read<RoomReservation>();
+            List<RoomReservation> reservations = SqlDatabaseHelper.Read<RoomReservation>
+                ($"StartTime BETWEEN #{StartDate.ToString("MM/dd/yyyy")}# AND #{EndDate.AddDays(1).ToString("MM/dd/yyyy")}#");
             List<Transaction> transactions = SqlDatabaseHelper.Read<Transaction>();
+            transactions.AddRange(SqlDatabaseHelper.ReadArchive<Transaction>());
             List<TransactionPart> transactionParts = SqlDatabaseHelper.Read<TransactionPart>();
+            transactionParts.AddRange(SqlDatabaseHelper.ReadArchive<TransactionPart>());
             List<ServiceGroup> servicegroups = SqlDatabaseHelper.Read<ServiceGroup>();
             List<Service> services = SqlDatabaseHelper.Read<Service>();
             List<Customer> customers = SqlDatabaseHelper.Read<Customer>();
@@ -154,13 +177,14 @@ namespace HotelProject.ViewModel
             SqlDatabaseHelper.JoinLists(transactions, transactionParts);
             SqlDatabaseHelper.JoinDiscreteByInnerOneWay(transactions, users);
             SqlDatabaseHelper.JoinDiscreteByInnerOneWay(transactionParts, services);
-            HtmlReports.AllReservations(reservations,AppVm.User);
+            HtmlReports.AllReservations(reservations,AppVm.User,StartDate,EndDate);
         }
 
         public void AllCustomersReport()
         {
             List<Customer> customerList = SqlDatabaseHelper.Read<Customer>();
             List<Transaction> transactionList = SqlDatabaseHelper.Read<Transaction>();
+            transactionList.AddRange(SqlDatabaseHelper.ReadArchive<Transaction>());
             List<RoomReservation> reservationList = SqlDatabaseHelper.Read<RoomReservation>();
             SqlDatabaseHelper.JoinLists(reservationList, transactionList);
             SqlDatabaseHelper.JoinLists(customerList, reservationList);
@@ -171,39 +195,46 @@ namespace HotelProject.ViewModel
         {
             List<RoomType> roomTypeList = SqlDatabaseHelper.Read<RoomType>();
             List<Room> roomList = SqlDatabaseHelper.Read<Room>();
-            List<RoomReservation> reservationList = SqlDatabaseHelper.Read<RoomReservation>();
+            List<RoomReservation> reservationList = SqlDatabaseHelper.Read<RoomReservation>
+                ($"StartTime BETWEEN #{StartDate.ToString("MM/dd/yyyy")}# AND #{EndDate.AddDays(1).ToString("MM/dd/yyyy")}#");
             List<Floor> floorList = SqlDatabaseHelper.Read<Floor>();
             List<Transaction> transactionList = SqlDatabaseHelper.Read<Transaction>();
+            transactionList.AddRange(SqlDatabaseHelper.ReadArchive<Transaction>());
             SqlDatabaseHelper.JoinDiscreteByInnerOneWay(roomList, floorList);
             SqlDatabaseHelper.JoinLists(reservationList, transactionList);
             SqlDatabaseHelper.JoinDiscreteByInnerOneWay(roomList, roomTypeList);
             SqlDatabaseHelper.JoinLists(roomList, reservationList);
             roomList.Sort();
-            HtmlReports.AllRoomsReport(roomList,AppVm.User);
+            HtmlReports.AllRoomsReport(roomList,AppVm.User,StartDate,EndDate);
         }
 
         public void AllFloorsReport()
         {
             List<RoomType> roomTypeList = SqlDatabaseHelper.Read<RoomType>();
             List<Room> roomList = SqlDatabaseHelper.Read<Room>();
-            List<RoomReservation> reservationList = SqlDatabaseHelper.Read<RoomReservation>();
+            List<RoomReservation> reservationList = SqlDatabaseHelper.Read<RoomReservation>
+                ($"StartTime BETWEEN #{StartDate.ToString("MM/dd/yyyy")}# AND #{EndDate.AddDays(1).ToString("MM/dd/yyyy")}#");
             List<Floor> floorList = SqlDatabaseHelper.Read<Floor>();
             List<Transaction> transactionList = SqlDatabaseHelper.Read<Transaction>();
+            transactionList.AddRange(SqlDatabaseHelper.ReadArchive<Transaction>());
             SqlDatabaseHelper.JoinLists(floorList, roomList);
             SqlDatabaseHelper.JoinLists(reservationList, transactionList);
             SqlDatabaseHelper.JoinDiscreteByInnerOneWay(roomList, roomTypeList);
             SqlDatabaseHelper.JoinLists(roomList, reservationList);
             floorList.Sort();
-            HtmlReports.AllFloorsReport(floorList,AppVm.User);
+            HtmlReports.AllFloorsReport(floorList,AppVm.User,StartDate,EndDate);
         }
 
         public void ReservationsByCustomerReport()
         {
             if (SelectedCustomer != null)
             {
-                List<RoomReservation> reservations = SqlDatabaseHelper.Read<RoomReservation>();
+                List<RoomReservation> reservations = SqlDatabaseHelper.Read<RoomReservation>
+                    ($"StartTime BETWEEN #{StartDate.ToString("MM/dd/yyyy")}# AND #{EndDate.AddDays(1).ToString("MM/dd/yyyy")}#");
                 List<Transaction> transactions = SqlDatabaseHelper.Read<Transaction>();
+                transactions.AddRange(SqlDatabaseHelper.ReadArchive<Transaction>());
                 List<TransactionPart> transactionParts = SqlDatabaseHelper.Read<TransactionPart>();
+                transactionParts.AddRange(SqlDatabaseHelper.ReadArchive<TransactionPart>());
                 List<ServiceGroup> servicegroups = SqlDatabaseHelper.Read<ServiceGroup>();
                 List<Service> services = SqlDatabaseHelper.Read<Service>();
                 List<Customer> customers = SqlDatabaseHelper.Read<Customer>();
@@ -229,7 +260,7 @@ namespace HotelProject.ViewModel
                     }
                 }
 
-                HtmlReports.ReservationsByCustomer(SelectedCustomer, AppVm.User);
+                HtmlReports.ReservationsByCustomer(SelectedCustomer, AppVm.User,StartDate,EndDate);
 
             }
         }

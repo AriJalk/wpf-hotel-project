@@ -1,6 +1,7 @@
 ﻿using HotelProject.Model.BaseClasses;
 using HotelProject.Model.Helpers;
 using HotelProject.Model.Interfaces;
+using HotelProject.ViewModel.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -132,6 +133,23 @@ namespace HotelProject.Model.DbClasses
             set { _customerid = value; }
         }
 
+        private bool _ischeckin;
+        //DB Property
+        public bool IsCheckIn
+        {
+            get { return _ischeckin; }
+            set { _ischeckin = value; }
+        }
+
+        private bool _ischeckout;
+        //DB Property
+        public bool IsCheckOut
+        {
+            get { return _ischeckout; }
+            set { _ischeckout = value; }
+        }
+
+
         private Customer _customer;
         /// <summary>
         /// Customer linked with reservation
@@ -191,6 +209,8 @@ namespace HotelProject.Model.DbClasses
             Fields.Add("PeopleCount", "INT NOT NULL");
             Fields.Add("StartTime", "DATETIME NOT NULL");
             Fields.Add("EndTime", "DATETIME NOT NULL");
+            Fields.Add("IsCheckIn", "BIT NOT NULL");
+            Fields.Add("IsCheckOut", "BIT NOT NULL");
         }
 
         #region Methods
@@ -228,6 +248,8 @@ namespace HotelProject.Model.DbClasses
             template.Add(TableFieldFormat("PeopleCount", Fields["PeopleCount"]));
             template.Add(TableFieldFormat("StartTime", Fields["StartTime"]));
             template.Add(TableFieldFormat("EndTime", Fields["EndTime"]));
+            template.Add(TableFieldFormat("IsCheckIn", Fields["IsCheckIn"]));
+            template.Add(TableFieldFormat("IsCheckOut", Fields["IsCheckOut"]));
             return template;
         }
 
@@ -240,23 +262,27 @@ namespace HotelProject.Model.DbClasses
             values.Add(new TableData(PeopleCount.ToString(), "PeopleCount"));
             values.Add(new TableData(StartTime.ToString(), "StartTime"));
             values.Add(new TableData(EndTime.ToString(), "EndTime"));
+            values.Add(new TableData(Converters.BoolToTable(IsCheckIn), "IsCheckIn"));
+            values.Add(new TableData(Converters.BoolToTable(IsCheckOut), "IsCheckOut"));
             return values;
         }
         public override Dictionary<string, string> GetFields()
         {
             return Fields;
         }
-        #endregion Methods
-
         public override List<string> GenerateErrors()
         {
             List<string> errors = base.GenerateErrors();
-            if (Customer == null)
+            /*if (Customer == null)
                 errors.Add("Customer not valid");
             if (Room == null)
-                errors.Add("Room not valid");
+                errors.Add("Room not valid");*/
             if (TransactionList[0].RoomReservationId != this.RoomReservationId)
                 errors.Add("Transaction not valid");
+            if (IsCheckIn && StartTime > DateTime.Now)
+                errors.Add("Check-In too early");
+            if (IsCheckOut && !IsCheckIn)
+                errors.Add("Check-Out without Check-In");
             return errors;
         }
 
@@ -265,5 +291,8 @@ namespace HotelProject.Model.DbClasses
             if (RoomId > 0)
                 IsInDb = true;
         }
+        #endregion Methods
+
+
     }
 }

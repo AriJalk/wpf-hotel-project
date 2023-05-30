@@ -28,10 +28,29 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.25*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <CheckBox Content="Show Archive"
+                      IsChecked="{Binding IsArchive}"/>
+            <CheckBox Content="Show Regular"
+                      IsChecked="{Binding IsRegular}"
+                      IsEnabled="{Binding IsArchive}"/>
+            <CheckBox Content="Check-In Today"
+                      IsChecked="{Binding IsToday}"/>
+            <CheckBox Content="Filter by Selected User"
+                      IsChecked="{Binding IsFilter}"
+                      IsEnabled="{Binding IsCustomerSelected}"/>
+            <Button Content="Archive Old"
+                    Command="{Binding ArchiveTransactionsCommand}"/>
+        </StackPanel>
         <DataGrid x:Name="TransactionsGrid"
+                  Grid.Row="1"
                   Style="{StaticResource TableStyle}"
                   Grid.Column="0"
                     MaxHeight="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=ActualHeight,
@@ -45,7 +64,9 @@
                     ScrollViewer.CanContentScroll="True"
                     ScrollViewer.VerticalScrollBarVisibility="Auto"
                     CanUserAddRows="False"
-                  CanUserDeleteRows="False">
+                    CanUserDeleteRows="False" SelectionChanged="TransactionsGrid_SelectionChanged"
+                    IsReadOnly="{Binding IsArchive}"
+                    SelectionMode="Single">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#"
                                     Binding="{Binding TransactionId}"
@@ -54,36 +75,49 @@
                 <DataGridTextColumn Header="Reservation"
                                     Binding="{Binding RoomReservationId}"
                                     IsReadOnly="True"/>
-                <DataGridCheckBoxColumn Header="Is Validated"
-                                    Binding="{Binding IsValidated}"
-                                        IsReadOnly="True"/>
-                <DataGridCheckBoxColumn Header="Is Payed"
-                                    Binding="{Binding IsPayed}"
-                                        IsReadOnly="True"/>
-                <DataGridCheckBoxColumn Header="Is Refunded"
-                                    Binding="{Binding IsRefunded}"
-                                        IsReadOnly="True"/>
-                <DataGridTextColumn Header="CreatedTime"
-                                            Binding="{Binding CreatedTime, Mode=OneWay}"
-                                            IsReadOnly="True"
-                                            Visibility="Collapsed"/>
                 <DataGridTextColumn Header="Customer"
                                     Binding="{Binding Customer,Converter={converters:PersonNameConverter}}"
                                     IsReadOnly="True"/>
                 <DataGridTextColumn Header="People #"
                                     Binding="{Binding Path=RoomReservation.PeopleCount}"
                                     IsReadOnly="True"/>
+                <DataGridTextColumn Header="Room"
+                                    Binding="{Binding Path=RoomReservation.Room.ElementNumber}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="CI Time"
+                                    Binding="{Binding Path=RoomReservation.StartTime}"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="CO Time"
+                                    Binding="{Binding Path=RoomReservation.EndTime}"
+                                    IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Payed"
+                                    Binding="{Binding IsPayed}"
+                                        IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Refunded"
+                                    Binding="{Binding IsRefunded}"
+                                        IsReadOnly="True"/>
+                <DataGridTextColumn Header="CreatedTime"
+                                            Binding="{Binding CreatedTime, Mode=OneWay}"
+                                            IsReadOnly="True"
+                                            Visibility="Collapsed"/>
+                
+                <DataGridCheckBoxColumn Header="Check In"
+                                    Binding="{Binding Path=RoomReservation.IsCheckIn}"/>
+                <DataGridCheckBoxColumn Header="Check Out"
+                                    Binding="{Binding Path=RoomReservation.IsCheckOut}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Refund"
-                                    Command="{Binding Data.RefundCommand,Source={StaticResource proxy}}"/>
+                                    Command="{Binding Data.RefundCommand,Source={StaticResource proxy}}"
+                                    IsEnabled="{Binding Data.IsArchive,Source={StaticResource proxy},Converter={converters:BoolNotConverter}}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="PartsGrid"
+                  Grid.Row="1"
                   Style="{StaticResource TableStyle}"
                   Grid.Column="1"
                   MaxHeight="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=ActualHeight,
@@ -104,7 +138,7 @@
                 <DataGridTextColumn Header="Service Name"
                                     Binding="{Binding Path=Service.Name}"/>
                 <DataGridTextColumn Header="Price"
-                                    Binding="{Binding Price}"/>
+                                    Binding="{Binding Price,StringFormat='{}{0:c}'}"/>
                 <DataGridTextColumn Header="CreatedTime"
                                             Binding="{Binding CreatedTime, Mode=OneWay}"
                                             IsReadOnly="True"

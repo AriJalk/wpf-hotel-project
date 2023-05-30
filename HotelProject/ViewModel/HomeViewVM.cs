@@ -94,6 +94,7 @@ namespace HotelProject.ViewModel
         {
             LoginCommand = new LoginCommand(this);
             LogoutCommand = new LogoutCommand(this);
+            Console.WriteLine(PasswordHelper.HashPassword("pass1"));
             AppVm = vm;
         }
 
@@ -127,6 +128,10 @@ namespace HotelProject.ViewModel
                     {
                         Debug.WriteLine(user.FName + " " + user.LName + " Logged In");
                         AppVm.LoginUser(user);
+                        PasswordString = string.Empty;
+                        OnPropertyChanged("PasswordString");
+                        LoginString = string.Empty;
+                        OnPropertyChanged("LoginString");
                         IsLoggedIn = AppVm.IsLoggedIn;
                         Refresh();
                     }

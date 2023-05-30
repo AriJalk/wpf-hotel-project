@@ -86,6 +86,7 @@
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </Border>
+            
             <ContentControl Content="{Binding CurrentPageViewModel}"/>
         </DockPanel>
         <StackPanel x:Name="UserPanel"
@@ -94,6 +95,9 @@
             Background="{StaticResource SidePanelBackground}">
             <TextBlock Text="Hello"/>
             <TextBlock Text="{Binding Path=User,Converter={converters:PersonToFNameConverter}}"/>
+            <TextBlock Text="Selected Customer: " Visibility="{Binding IsLoggedIn,Converter={converters:BoolVisibilityConverter}}"/>
+            <TextBlock Text="{Binding SelectedCustomer,Converter={converters:GlobalsSelectedCustomerConverter},FallbackValue='Null'}"
+                       Visibility="{Binding IsLoggedIn,Converter={converters:BoolVisibilityConverter}}"/>
             <DockPanel>
                 <Viewbox DockPanel.Dock="Top"
                     Stretch="Uniform" StretchDirection="Both">

@@ -57,8 +57,8 @@ namespace HotelProject.Model.BaseClasses
         public string IdNumber
         {
             get { return _idnumber; }
-            set 
-            { 
+            set
+            {
                 _idnumber = value;
             }
         }
@@ -95,9 +95,9 @@ namespace HotelProject.Model.BaseClasses
         public override List<string> GetTableTemplate()
         {
             List<string> template = base.GetTableTemplate();
-            template.Add(TableFieldFormat("FName",Fields["FName"]));
-            template.Add(TableFieldFormat("LName",Fields["LName"]));
-            template.Add(TableFieldFormat("PhoneNumber",Fields["PhoneNumber"]));
+            template.Add(TableFieldFormat("FName", Fields["FName"]));
+            template.Add(TableFieldFormat("LName", Fields["LName"]));
+            template.Add(TableFieldFormat("PhoneNumber", Fields["PhoneNumber"]));
             template.Add(TableFieldFormat("IdNumber", Fields["IdNumber"]));
             return template;
         }
@@ -137,9 +137,23 @@ namespace HotelProject.Model.BaseClasses
                         errors.Add("Phone Number");
                 }
             }
-            if (string.IsNullOrEmpty(IdNumber))
+            if (string.IsNullOrEmpty(IdNumber)||IdNumber.Length>9)
                 errors.Add("I.D Number");
+            else
+            {
+                long number;
+                bool success = long.TryParse(PhoneNumber, out number);
+                if (!success)
+                    errors.Add("I.D Number");
+            }
             return errors;
+        }
+
+        public bool Compare(Person other)
+        {
+            if (this._fname == other._fname && this._idnumber == other._idnumber && this._lname == other._lname && this._phonenumber == other._phonenumber)
+                return true;
+            return false;
         }
     }
 }

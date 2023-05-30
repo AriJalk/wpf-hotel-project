@@ -226,6 +226,7 @@ namespace HotelProject.ViewModel
             RoomReservationsCollection = CollectionViewSource.GetDefaultView(RoomReservations);
             RoomReservationsCollection.Filter = ReservationFilter;
             RoomReservationsCollection.SortDescriptions.Add(new SortDescription(nameof(RoomReservation.StartTime), ListSortDirection.Descending));
+            //Manager retroactive reservations
             if (ParentVm.AppVm.Globals.User.UserType.Name == "Manager" || ParentVm.AppVm.Globals.User.UserType.Name == "Admin")
                 IsRoomAvailable = Room.IsRoomAvailable(StartTime, EndTime, ParentVm.PeopleCount)
                     && ParentVm.AppVm.Globals.SelectedCustomer!=null
@@ -248,11 +249,12 @@ namespace HotelProject.ViewModel
             PartList = new List<TransactionPart>();
             NewReservation.TransactionList.Add(NewTransaction);
             int nights = (EndTime.Date - StartTime.Date).Days;
+            //Determine if week or weekend night
             for (int i = 0; i < nights; i++)
             {
                 TransactionPart newPart = null;
-
-                if ((int)StartTime.AddDays(i).DayOfWeek >= 0 && (int)StartTime.AddDays(i).DayOfWeek <= 4)
+                //If weekday
+                if ((int)StartTime.AddDays(i).DayOfWeek >= 0 && (int)StartTime.AddDays(i).DayOfWeek <= 3)
                 {
                     if (ParentVm.SelectedLodging == "Half Pension")
                         newPart = new TransactionPart(NewTransaction, ParentVm.WeekdayHalfService, Room.RoomType, ParentVm.PeopleCount);
@@ -260,6 +262,7 @@ namespace HotelProject.ViewModel
                         newPart = new TransactionPart(NewTransaction, ParentVm.WeekdayFullService, Room.RoomType, ParentVm.PeopleCount);
 
                 }
+                //Weekend
                 else
                 {
                     if (ParentVm.SelectedLodging == "Half Pension")

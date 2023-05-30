@@ -67,7 +67,7 @@ namespace HotelProject.ViewModel
                 //Save or revert object
                 if (_selectedUser != null)
                 {
-                    if (_selectedUser.ValidateData())
+                    if (_selectedUser.ValidateData()&&IsUnique(_selectedUser))
                     {
                         //Test if tried to change self type
                         if (_selectedUser.UserId == AppVm.User.UserId)
@@ -82,10 +82,11 @@ namespace HotelProject.ViewModel
                     }
                     else
                     {
+                        MessageBox.Show("Info not correct, reverting");
                         if (_selectedUser.IsInDb)
                         {
-                            MessageBox.Show("Info not correct, reverting");
-                            _selectedUser = _backupUser;
+                            if (_backupUser!=null)
+                                _selectedUser = _backupUser;
                             valid = false;
                             Refresh();
                         }
@@ -167,6 +168,16 @@ namespace HotelProject.ViewModel
             SelectedUser = null;
         }
 
+        private void InitializeVM(User user)
+        {
+            List<User> users = SqlDatabaseHelper.Read<User>();
+            SqlDatabaseHelper.JoinDiscreteByInner(users, AppVm.Globals.UserTypes);
+            UserList = new ObservableCollection<User>(users);
+            UserTypesList = new ObservableCollection<UserType>(AppVm.Globals.UserTypes);
+            UsersCollection = CollectionViewSource.GetDefaultView(UserList);
+            SelectedUser = user;
+        }
+
         public void Dispose()
         {
             _selectedUser = null;
@@ -183,8 +194,18 @@ namespace HotelProject.ViewModel
             {
                 SelectedUser.HashedPassword = PasswordHelper.HashPassword(PasswordString);
                 SqlDatabaseHelper.Insert(SelectedUser);
-                Refresh();
+                InitializeVM(SelectedUser);
             }
+        }
+        bool IsUnique(User user)
+        {
+            foreach (User other in UserList)
+            {
+                if (user == other) continue;
+                if (user.PhoneNumber == other.PhoneNumber || user.IdNumber == other.IdNumber)
+                    return false;
+            }
+            return true;
         }
     }
 }

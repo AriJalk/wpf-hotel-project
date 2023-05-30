@@ -76,8 +76,11 @@
     <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
     </Reference>
-    <Reference Include="IronPdf, Version=2022.9.0.9056, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
-      <HintPath>..\packages\IronPdf.Slim.2022.9.9056\lib\net40\IronPdf.dll</HintPath>
+    <Reference Include="IronPdf, Version=2023.1.0.11416, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.Slim.2023.1.11416\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -131,9 +134,11 @@
     <Compile Include="Model\DbClasses\ServiceGroup.cs" />
     <Compile Include="Model\DbClasses\Transaction.cs" />
     <Compile Include="Model\OtherClasses\ClockPart.cs" />
+    <Compile Include="Model\OtherClasses\PaymentServiceDummy.cs" />
     <Compile Include="ViewModel\AnalogClockVM.cs" />
     <Compile Include="ViewModel\Commands\CreditCardCommand\PayCommand.cs" />
     <Compile Include="ViewModel\Commands\Db Operations\ReadUpdateCommand.cs" />
+    <Compile Include="ViewModel\Commands\DbManagement\BackupDbCommand.cs" />
     <Compile Include="ViewModel\Commands\DeactivateCommand.cs" />
     <Compile Include="ViewModel\Commands\DownTextBlockCommand.cs" />
     <Compile Include="ViewModel\Commands\FloorRoomCommand\NewRoomCommand.cs" />
@@ -148,6 +153,7 @@
     <Compile Include="ViewModel\Commands\Reports\ReservationsByCustomerCommand.cs" />
     <Compile Include="ViewModel\Commands\ResetPasswordCommand.cs" />
     <Compile Include="ViewModel\Commands\RoomCommands\NewReservationCommand.cs" />
+    <Compile Include="ViewModel\Commands\TransactionCommands\ArchiveTransactionsCommand.cs" />
     <Compile Include="ViewModel\Commands\TransactionCommands\RefundCommand.cs" />
     <Compile Include="ViewModel\Commands\UpTextBlockCommand.cs" />
     <Compile Include="ViewModel\CreditCardViewVM.cs" />
@@ -203,6 +209,7 @@
     <Compile Include="View\Helpers\Converters\NumberedElementConverter.cs" />
     <Compile Include="View\Helpers\Converters\PersonNameConverter.cs" />
     <Compile Include="View\Helpers\Converters\PersonToFNameConverter.cs" />
+    <Compile Include="View\Helpers\Converters\PriceConverter.cs" />
     <Compile Include="View\Helpers\Converters\RoomAvailableConverter.cs" />
     <Compile Include="View\Helpers\Converters\RoomBackgroundConverter.cs" />
     <Compile Include="ViewModel\Helpers\SqlDatabaseHelper.cs" />
@@ -213,6 +220,7 @@
     <Compile Include="ViewModel\Bases\ViewModelBase.cs" />
     <Compile Include="View\Helpers\Converters\IsManagerConverter.cs" />
     <Compile Include="View\Helpers\Converters\BoolVisibilityConverter.cs" />
+    <Compile Include="View\Helpers\Converters\GlobalsSelectedCustomerConverter.cs" />
     <Compile Include="View\Helpers\Converters\ServiceToNameConverter.cs" />
     <Compile Include="View\Helpers\Converters\RoomTypeConverter.cs" />
     <Compile Include="View\Helpers\Converters\UserTypeConverter.cs" />
@@ -381,11 +389,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\IronPdf.Native.Chrome.Windows.2022.9.9049\build\net452\IronPdf.Native.Chrome.Windows.targets" Condition="Exists('..\packages\IronPdf.Native.Chrome.Windows.2022.9.9049\build\net452\IronPdf.Native.Chrome.Windows.targets')" />
+  <Import Project="..\packages\IronPdf.Native.Chrome.Windows.2023.1.11387\build\net\IronPdf.Native.Chrome.Windows.targets" Condition="Exists('..\packages\IronPdf.Native.Chrome.Windows.2023.1.11387\build\net\IronPdf.Native.Chrome.Windows.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\IronPdf.Native.Chrome.Windows.2022.9.9049\build\net452\IronPdf.Native.Chrome.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronPdf.Native.Chrome.Windows.2022.9.9049\build\net452\IronPdf.Native.Chrome.Windows.targets'))" />
+    <Error Condition="!Exists('..\packages\IronPdf.Native.Chrome.Windows.2023.1.11387\build\net\IronPdf.Native.Chrome.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronPdf.Native.Chrome.Windows.2023.1.11387\build\net\IronPdf.Native.Chrome.Windows.targets'))" />
   </Target>
 </Project>

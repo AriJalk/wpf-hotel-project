@@ -67,6 +67,13 @@ namespace HotelProject.ViewModel.Helpers
             }
             return Trim(values);
         }
+        /// <summary>
+        /// Creates Sql Command
+        /// Receives requires operation and object to create sql command from
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="op"></param>
+        /// <returns></returns>
         private static string CreateCommand(HotelDbElementBase obj, Operation op)
         {
             var classname = obj.GetType().Name;
@@ -75,10 +82,26 @@ namespace HotelProject.ViewModel.Helpers
                    classname, FormatInsertValues(obj));
 
             if (op == Operation.Delete)
-                return string.Format("DELETE FROM {0}Table WHERE {1}='{2}';",
+                return string.Format("DELETE FROM {0}Table WHERE {1}={2};",
                     classname, obj.GetPrimaryKeyType(), obj.GetPrimaryKey());
             if (op == Operation.Update)
                 return string.Format("UPDATE {0}Table SET {1} WHERE {2}={3};",
+                    classname, FormatUpdateValues(obj), obj.GetPrimaryKeyType(), obj.GetPrimaryKey());
+            else return "";
+        }
+
+        private static string CreateCommandArchive(HotelDbElementBase obj, Operation op)
+        {
+            var classname = obj.GetType().Name;
+            if (op == Operation.Insert)
+                return string.Format("INSERT INTO {0}Table_archive VALUES ({1});",
+                   classname, FormatInsertValues(obj));
+
+            if (op == Operation.Delete)
+                return string.Format("DELETE FROM {0}Table_archive WHERE {1}='{2}';",
+                    classname, obj.GetPrimaryKeyType(), obj.GetPrimaryKey());
+            if (op == Operation.Update)
+                return string.Format("UPDATE {0}Table_archive SET {1} WHERE {2}={3};",
                     classname, FormatUpdateValues(obj), obj.GetPrimaryKeyType(), obj.GetPrimaryKey());
             else return "";
         }
@@ -180,6 +203,37 @@ namespace HotelProject.ViewModel.Helpers
         }
 
         /// <summary>
+        /// Non query data method - Archive mode
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="op"></param>
+        /// <returns></returns>
+        private static bool WriteDBArchive(HotelDbElementBase obj, Operation op)
+        {
+            bool result = false;
+            OleDbCommand command = new OleDbCommand(CreateCommandArchive(obj, op));
+            try
+            {
+                using (var conn = new OleDbConnection(connectionString))
+                {
+                    command.Connection = conn;
+                    conn.Open();
+                    Debug.WriteLine("Command Text: " + command.CommandText);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    result = true;
+                    obj.IsInDb = true;
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine("Exception: " + err.Message);
+                return false;
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Basic Reading Operation
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -195,6 +249,65 @@ namespace HotelProject.ViewModel.Helpers
             var fields = t_access.GetFields();
             var objtype_access = t_access.GetType();
             OleDbCommand command = new OleDbCommand(string.Format("SELECT * FROM {0}Table;",
+                t_access.GetType().Name));
+            int maxid = 0;
+            //Open connection to DB
+            try
+            {
+                using (var conn = new OleDbConnection(connectionString))
+                {
+                    command.Connection = conn;
+                    conn.Open();
+                    OleDbDataReader dr;
+                    Debug.WriteLine("Command Text: " + command.CommandText);
+                    //Execture query
+                    dr = command.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        list.Add(new T());
+                        /*Every DB property corresponds to a mapped entry in the class static dictionary
+                        Since dictionary order is not controllable, read every key corresponding
+                        to a field from every dictionary pair and assign values to the property 
+                        corresponding to the key name*/
+                        foreach (var pair in fields)
+                        {
+                            var property = objtype_access.GetProperty(pair.Key);
+                            property.SetValue(list[index], dr[pair.Key]);
+                        }
+                        list[index].IsInDb = true;
+                        if (list[index].GetPrimaryKey() > maxid)
+                            maxid = list[index].GetPrimaryKey();
+                        index++;
+                    }
+                    dr.Close();
+                    conn.Close();
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine("Exception: " + err.Message);
+            }
+            t_access.IdCount = maxid;
+            return list;
+        }
+
+        /// <summary>
+        /// Basic Reading Operation - Archive mode
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static List<T> ReadArchive<T>() where T : HotelDbElementBase, new()
+        {
+            List<T> list = new List<T>();
+            var t_access = new T();
+            t_access.SetPrimaryKey(0);
+            t_access.IdCount = 0;
+            int index = 0;
+            var fields = t_access.GetFields();
+            var objtype_access = t_access.GetType();
+            OleDbCommand command = new OleDbCommand(string.Format("SELECT * FROM {0}Table_archive;",
                 t_access.GetType().Name));
             int maxid = 0;
             //Open connection to DB
@@ -298,6 +411,66 @@ namespace HotelProject.ViewModel.Helpers
             return list;
         }
 
+        /// <summary>
+        /// Specified Basic reading - Archive mode
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="where_args"></param>
+        /// <returns></returns>
+        public static List<T> ReadArchive<T>(string where_args) where T : HotelDbElementBase, new()
+        {
+            List<T> list = new List<T>();
+            var t_access = new T();
+            t_access.SetPrimaryKey(0);
+            t_access.IdCount = 0;
+            int index = 0;
+            var fields = t_access.GetFields();
+            var objtype_access = t_access.GetType();
+            OleDbCommand command = new OleDbCommand(string.Format("SELECT * FROM {0}Table_archive WHERE {1};",
+                t_access.GetType().Name, where_args));
+            int maxid = 0;
+            //Open connection to DB
+            try
+            {
+                using (var conn = new OleDbConnection(connectionString))
+                {
+                    command.Connection = conn;
+                    conn.Open();
+                    OleDbDataReader dr;
+                    Debug.WriteLine("Command Text: " + command.CommandText);
+                    //Execture query
+                    dr = command.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        list.Add(new T());
+                        /*Every DB property corresponds to a mapped entry in the class static dictionary
+                        Since dictionary order is not controllable, read every key corresponding
+                        to a field from every dictionary pair and assign values to the property 
+                        corresponding to the key name*/
+                        foreach (var pair in fields)
+                        {
+                            var property = objtype_access.GetProperty(pair.Key);
+                            property.SetValue(list[index], dr[pair.Key]);
+                        }
+                        list[index].IsInDb = true;
+                        if (list[index].GetPrimaryKey() > maxid)
+                            maxid = list[index].GetPrimaryKey();
+                        index++;
+                    }
+                    dr.Close();
+                    conn.Close();
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine("Exception: " + err.Message);
+            }
+            t_access.IdCount = maxid;
+            return list;
+        }
+
         public static T ReadSingle<T>(string where_args) where T : HotelDbElementBase, new()
         {
             T singleObject = new T();
@@ -349,6 +522,15 @@ namespace HotelProject.ViewModel.Helpers
             if (obj.IsInDb == false)
                 return WriteDB(obj, Operation.Insert);
             return WriteDB(obj, Operation.Update);
+        }
+        /// <summary>
+        /// Inserts or updates object - Archive mode
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static bool InsertArchive(HotelDbElementBase obj)
+        {
+            return WriteDBArchive(obj, Operation.Insert);
         }
         /// <summary>
         /// Delete object from database
@@ -439,6 +621,10 @@ namespace HotelProject.ViewModel.Helpers
                     }
                 }
             }
+        }
+        public static void BackUpDb(string newPath)
+        {
+            File.Copy(dbFile, newPath, true);
         }
     }
 }

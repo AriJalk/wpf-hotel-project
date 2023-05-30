@@ -71,7 +71,7 @@ namespace HotelProject.ViewModel
                     {
                         if (room.Row > maxrow)
                             maxrow = room.Row;
-                        RoomVMCollection.Add(new DisplayRoomMiniVM(room,this));
+                        RoomVMCollection.Add(new DisplayRoomMiniVM(room, this));
                     }
 
                     VmRows.Clear();
@@ -81,7 +81,7 @@ namespace HotelProject.ViewModel
                     }
                     foreach (Room room in _selectedfloor.RoomList)
                     {
-                        VmRows[room.Row - 1].AddToCollection(new DisplayRoomMiniVM(room,this), this);
+                        VmRows[room.Row - 1].AddToCollection(new DisplayRoomMiniVM(room, this), this);
                         OnPropertyChanged("VmRows");
                     }
                     AppVm.Globals.SelectedFloor = SelectedFloor;
@@ -132,6 +132,7 @@ namespace HotelProject.ViewModel
                 _isunavailablechecked = value;
                 OnPropertyChanged("IsUnavailableChecked");
                 RefreshUnavailableView();
+
             }
         }
 
@@ -156,6 +157,15 @@ namespace HotelProject.ViewModel
                 OnPropertyChanged("SelectedRoomMiniVM");
             }
         }
+
+        private int _eldsssdtlgejt;
+
+        public int Something
+        {
+            get { return _eldsssdtlgejt; }
+            set { _eldsssdtlgejt = value; }
+        }
+
 
         private DisplayRoomFullVM _selectedroomfullvm;
 
@@ -194,6 +204,11 @@ namespace HotelProject.ViewModel
                 RefreshRoomVM();
                 if (SelectedRoomFullVM != null)
                     SelectedRoomFullVM.RefreshVM();
+                //Adjust end date if needed
+                if (SelectedEndDate <= SelectedStartDate)
+                {
+                    SelectedEndDate = new DateTime(SelectedEndDate.Year, SelectedStartDate.Month, SelectedStartDate.Day).AddDays(1);
+                }
 
             }
         }
@@ -209,11 +224,13 @@ namespace HotelProject.ViewModel
             set
             {
                 _selectedenddate = value;
-                OnPropertyChanged("SelectedEndTime");
+                OnPropertyChanged("SelectedEndDate");
                 CombinedEndTime = new DateTime(_selectedenddate.Year, _selectedenddate.Month, _selectedenddate.Day,
-                SelectedStartTime.Hour, SelectedStartTime.Minute, 0);
+                SelectedEndTime.Hour, SelectedEndTime.Minute, 0);
                 //RefreshRooms();
                 RefreshRoomVM();
+                if(SelectedRoom!=null)
+                    SelectedRoomFullVM.RefreshVM();
             }
         }
 
@@ -457,63 +474,23 @@ namespace HotelProject.ViewModel
                 ("PropertyFiles", "HotelGlobalParameters") as HotelGlobalParameters;
 
             //Set default start time to today or tommorow if after 1400, set end time by same logic
-            bool isTommorow = now.Hour >= HotelGlobalParameters.CheckInHour;
-            if (isTommorow)
-            {
-                // test if next month tommorow
-                if (now.AddDays(1).Day == 1)
-                {
-                    //check if next year tommorow
-                    if (now.AddMonths(1).Month == 1)
-                    {
-                        SelectedStartDate = new DateTime(now.AddYears(1).Year, now.AddMonths(1).Month, now.AddDays(1).Day);
-                        SelectedEndDate = new DateTime(now.AddYears(1).Year, now.AddMonths(1).Month, now.AddDays(2).Day);
-                    }
-                    else 
-                    {
-                        SelectedStartDate = new DateTime(now.Year, now.AddMonths(1).Month, now.AddDays(1).Day);
-                        SelectedEndDate = new DateTime(now.Year, now.AddMonths(1).Month, now.AddDays(2).Day);
-                    }
-                    
-                }
-                else
-                {
-                    SelectedStartDate = new DateTime(
-                        now.Year, now.Month, now.AddDays(1).Day);
-                    if(now.AddDays(2).Day==1)
-                    {
-                        if(now.AddMonths(1).Month==1)
-                            SelectedEndDate = new DateTime(now.AddYears(1).Year, now.AddMonths(1).Month, now.AddDays(1).Day);
-                        else
-                            SelectedEndDate = new DateTime(now.Year, now.AddMonths(1).Month, now.AddDays(2).Day);
-                    }
-                    else
-                        SelectedEndDate = new DateTime(
-                        now.Year, now.Month, now.AddDays(2).Day);
-                }
-                    
-            }
-            else
-            {
-                SelectedStartDate = new DateTime(now.Year, now.Month, now.Day);
-                if (now.AddDays(1).Day == 1)
-                {
-                    if(now.AddMonths(1).Month==1)
-                        SelectedEndDate = new DateTime(now.AddYears(1).Year, now.AddMonths(1).Month, now.AddDays(2).Day);
-                    else 
-                        SelectedEndDate = new DateTime(now.Year, now.AddMonths(1).Month, now.AddDays(2).Day);
-                }
-                else
-                {
-                    SelectedEndDate = new DateTime(now.Year, now.Month, now.AddDays(1).Day);
-                }
-                    
-            }
-           
+
             SelectedStartTime = new DateTime
                 (now.Year, now.Month, now.Day, HotelGlobalParameters.CheckInHour, HotelGlobalParameters.CheckInMinutes, 0);
             SelectedEndTime = new DateTime
                 (now.Year, now.Month, now.AddDays(1).Day, HotelGlobalParameters.CheckOutHour, HotelGlobalParameters.CheckOutMinutes, 0);
+            bool isTommorow = now.Hour >= HotelGlobalParameters.CheckInHour;
+            if (isTommorow)
+            {
+                SelectedStartDate = new DateTime(now.Year, now.Month, now.Day).AddDays(1);
+                SelectedEndDate = new DateTime(now.Year, now.Month, now.Day).AddDays(2);
+            }
+            else
+            {
+                SelectedStartDate = new DateTime(now.Year, now.Month, now.Day);
+                SelectedEndDate = new DateTime(now.Year, now.Month, now.Day).AddDays(1);
+            }
+
             //Set collection views to be used as sorted lists
             FloorsCollection = new ObservableCollection<Floor>(floors);
             FloorCollectionView = CollectionViewSource.GetDefaultView(FloorsCollection);

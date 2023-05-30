@@ -19,7 +19,7 @@ namespace HotelProject.ViewModel
     public class ServicesViewVM : ViewModelBase, IPageViewModel
     {
 
-        public string Name => "ServiceList";
+        public string Name => "Service List";
 
         private bool _showbutton;
 

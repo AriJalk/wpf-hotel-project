@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelProject.View"
+        xmlns:converters="clr-namespace:HotelProject.View.Helpers.Converters"
         mc:Ignorable="d"
         Title="CreditCardView" Height="450" Width="450">
     <Window.Resources>
@@ -17,7 +18,7 @@
     <Grid>
         <StackPanel>
             <TextBlock Text="Total: "/>
-            <TextBlock Text="{Binding Total}"/>
+            <TextBlock Text="{Binding Total,Converter={converters:PriceConverter}}"/>
             <TextBlock Text="Credit Number"/>
             <TextBox Text="{Binding CreditCardNumber}"/>
             <TextBlock Text="Holder Id"/>

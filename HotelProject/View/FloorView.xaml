@@ -45,20 +45,25 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBox Text="{Binding PeopleCount,UpdateSourceTrigger=PropertyChanged}" Width="50"
-                         IsReadOnly="True"/>
-                <Button Content="Up" Command="{Binding UpTextBlockCommand}" CommandParameter="{Binding PeopleCount}"/>
-                <Button Content="Down" Command="{Binding DownTextBlockCommand}" CommandParameter="{Binding PeopleCount}"/>
+                         IsReadOnly="True"
+                         Margin="5"/>
+                <Button Content="Up" Command="{Binding UpTextBlockCommand}" CommandParameter="{Binding PeopleCount}"
+                        Margin="2"/>
+                <Button Content="Down" Command="{Binding DownTextBlockCommand}" CommandParameter="{Binding PeopleCount}"
+                        Margin="2"/>
             </StackPanel>
+            <TextBlock Text="Lodging"/>
             <ComboBox x:Name="Lodging"
                       ItemsSource="{Binding Path=LodgingTypes}"
-                      SelectedItem="{Binding SelectedLodging}"/>
-            <CheckBox Content="Display Not Active"
+                      SelectedItem="{Binding SelectedLodging}"
+                      Margin="10"/>
+            <CheckBox Content="Display Not Active Rooms"
                       IsChecked="{Binding IsUnavailableChecked}"
                       Margin="10"/>
             <StackPanel x:Name="ManagerPanel">
                 <TextBlock Text="Manager Panel"
                            Margin="10"
-                           Visibility="{Binding Path=AppVm.Globals.User,Converter={converters:UserVisibilityConverter}}"/>
+                           Visibility="Collapsed"/>
             </StackPanel>
         </StackPanel>
         <ListView 

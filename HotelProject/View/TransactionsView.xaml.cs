@@ -24,5 +24,10 @@ namespace HotelProject.View
         {
             InitializeComponent();
         }
+
+        private void TransactionsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

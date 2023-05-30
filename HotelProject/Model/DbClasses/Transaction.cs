@@ -192,7 +192,7 @@ namespace HotelProject.Model.DbClasses
             this.IsPayed = source.IsPayed;
             this.IsRefunded = source.IsRefunded;
             this.IsValidated = source.IsValidated;
-            this.RoomReservation = source.RoomReservation;
+            this.RoomReservation = new RoomReservation(source.RoomReservation);
             this.ToPayAmount = source.ToPayAmount;
             this.TransactionId = source.TransactionId;
             this.TransactionPartList = source.TransactionPartList;
@@ -343,6 +343,37 @@ namespace HotelProject.Model.DbClasses
                 {
                     part.IsActive = false;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Archive transaction if conditions apply (CheckIn+CheckOut and enough days passed)
+        /// </summary>
+        public void Archive()
+        {
+            int daysPolicy = 30;
+            bool refund=RoomReservation.TransactionList[0].IsRefunded;
+            TimeSpan ts = DateTime.Now - RoomReservation.EndTime;
+            
+            if(ts.Days>=daysPolicy&&refund)
+            {
+                foreach (TransactionPart part in TransactionPartList)
+                {
+                    if (SqlDatabaseHelper.InsertArchive(part))
+                        SqlDatabaseHelper.Delete(part);
+                }
+                if (SqlDatabaseHelper.InsertArchive(this))
+                    SqlDatabaseHelper.Delete(this);
+            }
+            else if(ts.Days>=daysPolicy&&this.RoomReservation.IsCheckIn&&this.RoomReservation.IsCheckOut)
+            {
+                foreach(TransactionPart part in TransactionPartList)
+                {
+                    if(SqlDatabaseHelper.InsertArchive(part))
+                        SqlDatabaseHelper.Delete(part);
+                }
+                if(SqlDatabaseHelper.InsertArchive(this))
+                    SqlDatabaseHelper.Delete(this);
             }
         }
     }

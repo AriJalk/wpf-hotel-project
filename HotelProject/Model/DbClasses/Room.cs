@@ -256,7 +256,7 @@ namespace HotelProject.Model.DbClasses
                 return false;
             else
             {
-                foreach (var reservation in RoomReservationList.Where(x => x.EndTime > DateTime.Now))
+                foreach (var reservation in RoomReservationList.Where(x => x.EndTime >= DateTime.Now))
                 {
                     //Check if dates in range
                     //Start before reservation start and end after reservation start
