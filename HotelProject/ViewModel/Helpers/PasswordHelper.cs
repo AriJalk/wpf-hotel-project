@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using BCrypt.Net;
+﻿using HotelProject.Model.DbClasses;
 
 namespace HotelProject.ViewModel.Helpers
 {
     public static class PasswordHelper
     {
-        private static string GetRandomSalt()
+        public static string GetRandomSalt()
         {
             return BCrypt.Net.BCrypt.GenerateSalt(12);
         }
 
-        public static string HashPassword(string password)
+        public static string HashPassword(string password, string salt)
         {
-            return BCrypt.Net.BCrypt.HashPassword(password, GetRandomSalt());
+            return BCrypt.Net.BCrypt.HashPassword(password, salt);
         }
 
-        public static bool ValidatePassword(string password, string correctHash)
+        public static bool ValidatePassword(string password, User user)
         {
-            return BCrypt.Net.BCrypt.Verify(password, correctHash);
+            if (HashPassword(password, user.PasswordSalt) == user.HashedPassword)
+                return true;
+            return false;
         }
     }
 }

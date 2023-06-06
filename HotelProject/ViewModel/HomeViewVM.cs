@@ -1,13 +1,8 @@
 ﻿using HotelProject.Model.DbClasses;
 using HotelProject.ViewModel.Commands;
 using HotelProject.ViewModel.Helpers;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace HotelProject.ViewModel
@@ -94,7 +89,6 @@ namespace HotelProject.ViewModel
         {
             LoginCommand = new LoginCommand(this);
             LogoutCommand = new LogoutCommand(this);
-            Console.WriteLine(PasswordHelper.HashPassword("pass1"));
             AppVm = vm;
         }
 
@@ -111,9 +105,10 @@ namespace HotelProject.ViewModel
                 MessageBox.Show("Login information missing");
             else
             {
+
                 //Read user from db
                 User user = SqlDatabaseHelper.ReadSingle<User>("Login='" + LoginString + "' " 
-                    + "AND IsActive=YES");
+                    + "AND IsActive=YES");               
                 if (user.IsInDb)
                 {
                     //Read user types and match
@@ -124,7 +119,7 @@ namespace HotelProject.ViewModel
                             user.UserType = type;
                     }
                     //Login user if details are correct
-                    if (PasswordHelper.ValidatePassword(PasswordString, user.HashedPassword))
+                    if (PasswordHelper.ValidatePassword(PasswordString, user))
                     {
                         Debug.WriteLine(user.FName + " " + user.LName + " Logged In");
                         AppVm.LoginUser(user);

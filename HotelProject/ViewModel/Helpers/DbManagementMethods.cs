@@ -1,12 +1,8 @@
 ﻿using HotelProject.Model.BaseClasses;
 using HotelProject.Model.DbClasses;
 using HotelProject.Model.Helpers;
-using HotelProject.ViewModel.Helpers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace HotelProject.ViewModel.Helpers
 {
@@ -98,7 +94,7 @@ namespace HotelProject.ViewModel.Helpers
             SqlDatabaseHelper.Insert(new Customer(new Person("Customer2", "Family2", "05000002","0001")));
             SqlDatabaseHelper.Insert(new Customer(new Person("Customer3", "Family3", "052674", "000155")));
             User.SetIdCount(0);
-            User ari = new User(new Person("Ari", "Jalk", "05267","301900601"), "arij", "pass", manager);
+            User ari = new User(new Person("Ari", "Jalk", "05267","301900601"), "arij", "pass", PasswordHelper.GetRandomSalt(), manager);
             SqlDatabaseHelper.Insert(regular);
             SqlDatabaseHelper.Insert(luxury);
             SqlDatabaseHelper.Insert(penthouse);

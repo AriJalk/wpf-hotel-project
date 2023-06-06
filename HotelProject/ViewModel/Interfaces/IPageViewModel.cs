@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HotelProject.ViewModel
+﻿namespace HotelProject.ViewModel
 {
     public interface IPageViewModel
     {

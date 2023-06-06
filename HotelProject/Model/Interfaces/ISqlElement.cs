@@ -1,10 +1,5 @@
-﻿using HotelProject.Model.BaseClasses;
-using HotelProject.Model.Helpers;
-using System;
+﻿using HotelProject.Model.Helpers;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelProject.Model.Interfaces
 {

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Users\Ariel\source\repos\HotelProjectDevelop\HotelProject\obj\x64\Debug\
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\obj\x64\Debug\
 HotelProject
 none
 false
 DEBUG;TRACE
-D:\Users\Ariel\source\repos\HotelProjectDevelop\HotelProject\App.xaml
+D:\Users\Ariel\source\repos\HotelProject\HotelProject\App.xaml
 18-1628259742
-161-1268549534
+165-1453724418
 1131208231670
-271047600821
+48-415690649
 View\ApplicationView.xaml;View\CreditCardView.xaml;View\CustomersView.xaml;View\DbManagementView.xaml;View\EditFloorRoomView.xaml;View\FloorView.xaml;View\HomeView.xaml;View\ReportsView.xaml;View\ServicesView.xaml;View\TransactionsView.xaml;View\UserControls\AnalogClockView.xaml;View\UserControls\BindablePasswordBox.xaml;View\UserControls\DisplayFloorMini.xaml;View\UserControls\DisplayRoomFullView.xaml;View\UserControls\DisplayRoomReservations.xaml;View\UserControls\DisplayRoomMini.xaml;View\UserControls\YnetRssReader.xaml;View\UsersView.xaml;
 
 True

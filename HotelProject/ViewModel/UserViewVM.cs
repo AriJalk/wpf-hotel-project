@@ -1,14 +1,9 @@
 ﻿using HotelProject.Model.DbClasses;
 using HotelProject.ViewModel.Commands;
 using HotelProject.ViewModel.Helpers;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
@@ -192,9 +187,12 @@ namespace HotelProject.ViewModel
         {
             if (SelectedUser != null && !string.IsNullOrEmpty(PasswordString))
             {
-                SelectedUser.HashedPassword = PasswordHelper.HashPassword(PasswordString);
+                string salt = PasswordHelper.GetRandomSalt();
+                SelectedUser.PasswordSalt = salt;
+                SelectedUser.HashedPassword = PasswordHelper.HashPassword(PasswordString, salt);
                 SqlDatabaseHelper.Insert(SelectedUser);
-                InitializeVM(SelectedUser);
+
+                //InitializeVM(SelectedUser);
             }
         }
         bool IsUnique(User user)

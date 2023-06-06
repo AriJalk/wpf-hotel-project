@@ -1,19 +1,14 @@
 ﻿using HotelProject.Model.DbClasses;
 using HotelProject.Model.FileClasses;
-using HotelProject.Model.Helpers;
 using HotelProject.ViewModel.Commands;
 using HotelProject.ViewModel.Containers;
 using HotelProject.ViewModel.Helpers;
-using HotelProject.ViewModel.Helpers.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Data;
 
 namespace HotelProject.ViewModel

@@ -1,14 +1,9 @@
 ﻿using HotelProject.Model.BaseClasses;
-using HotelProject.Model.DbClasses;
 using HotelProject.Model.Helpers;
 using HotelProject.Model.Interfaces;
 using HotelProject.ViewModel.Helpers;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelProject.Model.DbClasses
 {
@@ -58,7 +53,7 @@ namespace HotelProject.Model.DbClasses
             get { return _login; }
             set
             {
-                    _login = value;
+                _login = value;
             }
         }
 
@@ -73,6 +68,17 @@ namespace HotelProject.Model.DbClasses
             get { return _hasheddpassword; }
             set { _hasheddpassword = value; }
         }
+
+        private string _passwordSalt;
+        /// <summary>
+        /// DB Property
+        /// </summary>
+        public string PasswordSalt
+        {
+            get { return _passwordSalt; }
+            set { _passwordSalt = value; }
+        }
+
 
         private int _usertypeid;
         /// <summary>
@@ -132,28 +138,30 @@ namespace HotelProject.Model.DbClasses
             }
         }
 
-        public User(Person person, string login, string hashedpassword, UserType userType) : base(person.FName, person.LName, person.PhoneNumber,person.IdNumber)
+        public User(Person person, string login, string hashedpassword, string passwordSalt, UserType userType) : base(person.FName, person.LName, person.PhoneNumber, person.IdNumber)
         {
             Login = login;
             HashedPassword = hashedpassword;
+            PasswordSalt = passwordSalt;
             UserType = userType;
-            UserId = IdCount+1;
+            UserId = IdCount + 1;
         }
 
-        public User(Person person) : base(person.FName,person.LName,person.PhoneNumber,person.IdNumber)
+        public User(Person person) : base(person.FName, person.LName, person.PhoneNumber, person.IdNumber)
         {
             Is_Checked = false;
-            UserId = IdCount+1;
+            UserId = IdCount + 1;
         }
 
         /// <summary>
         /// Copy constructor
         /// </summary>
         /// <param name="user"></param>
-        public User(User user) : base(user.FName,user.LName,user.PhoneNumber,user.IdNumber)
+        public User(User user) : base(user.FName, user.LName, user.PhoneNumber, user.IdNumber)
         {
             Login = user.Login;
             HashedPassword = user.HashedPassword;
+            PasswordSalt = user.PasswordSalt;
             UserType = user.UserType;
             _userid = user.UserId;
             CreatedTime = user.CreatedTime;
@@ -161,8 +169,9 @@ namespace HotelProject.Model.DbClasses
 
         public User()
         {
-            _userid = IdCount+1;
-            HashedPassword = PasswordHelper.HashPassword("12345");
+            _userid = IdCount + 1;
+            PasswordSalt = PasswordHelper.GetRandomSalt();
+            HashedPassword = PasswordHelper.HashPassword("12345",PasswordSalt);
         }
 
         static User()
@@ -172,7 +181,8 @@ namespace HotelProject.Model.DbClasses
                 { "UserId", "INT NOT NULL UNIQUE" },
                 { "Login","VARCHAR(50) NOT NULL UNIQUE" },
                 { "HashedPassword", "VARCHAR(255) NOT NULL" },
-                { "UserTypeId","INT NOT NULL" }
+                { "UserTypeId","INT NOT NULL" },
+                { "PasswordSalt", "VARCHAR(255) NOT NULL" }
             };
         }
 
@@ -205,10 +215,11 @@ namespace HotelProject.Model.DbClasses
             List<string> template = base.GetTableTemplate();
             template.Add(TableFieldFormat(GetPrimaryKeyType(), Fields[GetPrimaryKeyType()] + " PRIMARY KEY"));
             template.Add(TableFieldFormat("Login", Fields["Login"]));
-            template.Add(TableFieldFormat("HashedPassword", Fields["HashedPassword"]));
+            template.Add(TableFieldFormat("HashedPassword", Fields["HashedPassword"]));  
             if (UserType == null)
                 UserType = new UserType();
             template.Add(TableFieldFormat("UserTypeId", UserType.Fields["UserTypeId"]));
+            template.Add(TableFieldFormat("PasswordSalt", Fields["PasswordSalt"]));
             return template;
         }
 
@@ -218,6 +229,7 @@ namespace HotelProject.Model.DbClasses
             values.Add(new TableData(GetPrimaryKey().ToString(), GetPrimaryKeyType()));
             values.Add(new TableData(Login, "Login"));
             values.Add(new TableData(HashedPassword, "HashedPassword"));
+            values.Add(new TableData(PasswordSalt, "PasswordSalt"));
             values.Add(new TableData(UserType.UserTypeId.ToString(), "UserTypeId"));
             return values;
         }

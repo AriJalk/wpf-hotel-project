@@ -4,9 +4,6 @@ using HotelProject.ViewModel.Helpers;
 using HotelProject.ViewModel.Helpers.Pdf;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelProject.ViewModel
 {

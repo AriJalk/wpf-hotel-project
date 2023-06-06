@@ -1,19 +1,12 @@
-﻿using HotelProject.Model;
-using HotelProject.Model.BaseClasses;
-using HotelProject.Model.DbClasses;
+﻿using HotelProject.Model.BaseClasses;
 using HotelProject.Model.Helpers;
-using HotelProject.Model.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.OleDb;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace HotelProject.ViewModel.Helpers
 {

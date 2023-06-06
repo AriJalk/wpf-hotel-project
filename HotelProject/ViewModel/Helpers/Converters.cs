@@ -1,11 +1,4 @@
-﻿using HotelProject.Model.BaseClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HotelProject.ViewModel.Helpers
+﻿namespace HotelProject.ViewModel.Helpers
 {
     static class Converters
     {

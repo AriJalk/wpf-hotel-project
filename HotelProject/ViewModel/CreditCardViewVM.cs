@@ -2,11 +2,7 @@
 using HotelProject.Model.OtherClasses;
 using HotelProject.View;
 using HotelProject.ViewModel.Commands.CreditCardCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
 
 namespace HotelProject.ViewModel

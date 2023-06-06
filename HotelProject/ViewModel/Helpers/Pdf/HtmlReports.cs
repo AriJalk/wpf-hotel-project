@@ -1,14 +1,10 @@
-﻿using HotelProject.Model.BaseClasses;
-using HotelProject.Model.DbClasses;
+﻿using HotelProject.Model.DbClasses;
 using IronPdf;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelProject.ViewModel.Helpers.Pdf
