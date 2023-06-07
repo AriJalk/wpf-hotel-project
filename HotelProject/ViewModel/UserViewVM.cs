@@ -188,7 +188,6 @@ namespace HotelProject.ViewModel
             if (SelectedUser != null && !string.IsNullOrEmpty(PasswordString))
             {
                 string salt = PasswordHelper.GetRandomSalt();
-                SelectedUser.PasswordSalt = salt;
                 SelectedUser.HashedPassword = PasswordHelper.HashPassword(PasswordString, salt);
                 SqlDatabaseHelper.Insert(SelectedUser);
 

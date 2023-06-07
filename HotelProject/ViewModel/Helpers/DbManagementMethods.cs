@@ -62,6 +62,7 @@ namespace HotelProject.ViewModel.Helpers
             RoomType penthouse = new RoomType(RoomTypesEnum.Penthouse, 1000);
             UserType worker = new UserType(UserTypesEnum.Worker);
             UserType manager = new UserType(UserTypesEnum.Manager);
+            UserType admin = new UserType(UserTypesEnum.Admin);
             ServiceGroup sg1 = new ServiceGroup("Lodging");
             ServiceGroup sg2 = new ServiceGroup("Room Service");
             SqlDatabaseHelper.Insert(new Service("Weekday Half Pension Night", sg1, 400));
@@ -94,7 +95,8 @@ namespace HotelProject.ViewModel.Helpers
             SqlDatabaseHelper.Insert(new Customer(new Person("Customer2", "Family2", "05000002","0001")));
             SqlDatabaseHelper.Insert(new Customer(new Person("Customer3", "Family3", "052674", "000155")));
             User.SetIdCount(0);
-            User ari = new User(new Person("Ari", "Jalk", "05267","301900601"), "arij", "pass", PasswordHelper.GetRandomSalt(), manager);
+            User ari = new User(new Person("Ari", "Jalk", "05267","301900601"), "arij",
+                PasswordHelper.HashPassword("pass1",PasswordHelper.GetRandomSalt()), admin);
             SqlDatabaseHelper.Insert(regular);
             SqlDatabaseHelper.Insert(luxury);
             SqlDatabaseHelper.Insert(penthouse);

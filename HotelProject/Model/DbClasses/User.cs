@@ -69,16 +69,6 @@ namespace HotelProject.Model.DbClasses
             set { _hasheddpassword = value; }
         }
 
-        private string _passwordSalt;
-        /// <summary>
-        /// DB Property
-        /// </summary>
-        public string PasswordSalt
-        {
-            get { return _passwordSalt; }
-            set { _passwordSalt = value; }
-        }
-
 
         private int _usertypeid;
         /// <summary>
@@ -138,11 +128,10 @@ namespace HotelProject.Model.DbClasses
             }
         }
 
-        public User(Person person, string login, string hashedpassword, string passwordSalt, UserType userType) : base(person.FName, person.LName, person.PhoneNumber, person.IdNumber)
+        public User(Person person, string login, string hashedpassword, UserType userType) : base(person.FName, person.LName, person.PhoneNumber, person.IdNumber)
         {
             Login = login;
             HashedPassword = hashedpassword;
-            PasswordSalt = passwordSalt;
             UserType = userType;
             UserId = IdCount + 1;
         }
@@ -161,7 +150,6 @@ namespace HotelProject.Model.DbClasses
         {
             Login = user.Login;
             HashedPassword = user.HashedPassword;
-            PasswordSalt = user.PasswordSalt;
             UserType = user.UserType;
             _userid = user.UserId;
             CreatedTime = user.CreatedTime;
@@ -170,8 +158,7 @@ namespace HotelProject.Model.DbClasses
         public User()
         {
             _userid = IdCount + 1;
-            PasswordSalt = PasswordHelper.GetRandomSalt();
-            HashedPassword = PasswordHelper.HashPassword("12345",PasswordSalt);
+            HashedPassword = PasswordHelper.HashPassword("12345",PasswordHelper.GetRandomSalt());
         }
 
         static User()
@@ -181,8 +168,7 @@ namespace HotelProject.Model.DbClasses
                 { "UserId", "INT NOT NULL UNIQUE" },
                 { "Login","VARCHAR(50) NOT NULL UNIQUE" },
                 { "HashedPassword", "VARCHAR(255) NOT NULL" },
-                { "UserTypeId","INT NOT NULL" },
-                { "PasswordSalt", "VARCHAR(255) NOT NULL" }
+                { "UserTypeId","INT NOT NULL" }
             };
         }
 
@@ -219,7 +205,7 @@ namespace HotelProject.Model.DbClasses
             if (UserType == null)
                 UserType = new UserType();
             template.Add(TableFieldFormat("UserTypeId", UserType.Fields["UserTypeId"]));
-            template.Add(TableFieldFormat("PasswordSalt", Fields["PasswordSalt"]));
+
             return template;
         }
 
@@ -229,7 +215,6 @@ namespace HotelProject.Model.DbClasses
             values.Add(new TableData(GetPrimaryKey().ToString(), GetPrimaryKeyType()));
             values.Add(new TableData(Login, "Login"));
             values.Add(new TableData(HashedPassword, "HashedPassword"));
-            values.Add(new TableData(PasswordSalt, "PasswordSalt"));
             values.Add(new TableData(UserType.UserTypeId.ToString(), "UserTypeId"));
             return values;
         }

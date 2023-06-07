@@ -1,2 +1,8 @@
 /[Pp]ackages/
 /.vs/
+/HotelProject/obj/
+/HotelProject/bin/**
+!/HotelProject/bin/x64/Debug/HtmlOutput/
+!/HotelProject/bin/x64/Debug/PropertyFiles/
+!/HotelProject/bin/x64/Debug/Resources/
+!/HotelProject/bin/x64/Debug/DB.accdb
