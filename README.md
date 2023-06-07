@@ -6,6 +6,8 @@
 
 The code and visuals in this repository are for viewing purposes only. They are not intended for commercial use or redistribution without permission.
 
+### Rebuild project to allow the xaml graphic editor to work
+
 ### Login data:
 * arij - pass1 - Admin
 * ayelet - pass2 - Manager
