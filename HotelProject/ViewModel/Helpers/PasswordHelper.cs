@@ -16,7 +16,7 @@ namespace HotelProject.ViewModel.Helpers
 
         public static bool ValidatePassword(string password, User user)
         {
-            if (HashPassword(password, user.PasswordSalt) == user.HashedPassword)
+            if (BCrypt.Net.BCrypt.Verify(HashPassword(password, user.PasswordSalt), user.HashedPassword))
                 return true;
             return false;
         }

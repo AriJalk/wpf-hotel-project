@@ -12,7 +12,7 @@ namespace HotelProject.ViewModel.Helpers
 {
     /// <summary>
     /// Handles all communication with the sql database<br/>
-    /// Table naming is plural of [class]
+    /// Table naming is [class]Table
     /// </summary>
     public static class SqlDatabaseHelper
     {
