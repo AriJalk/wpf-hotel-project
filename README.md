@@ -22,16 +22,21 @@ Reservations are customer oriented and the room selection is done through a visu
 Login
 ![Login](Images/Login.jpg)</br>
 ### Reservation proccess
-Customers Screen - Choose customer or add new ones
+Customers Screen - Choose customer, the buttom empty row is used to add new custumers, data validation is customizable and revertable if a field results in an error.
 ![Customers](Images/Customers.jpg)</br>
 Floor View - Choose floor
 ![Floor](Images/FloorView.jpg)</br>
-Reservation - Choose available room in the floor which is in capacity to number of people at date and time
+
+Reservation - Choose available room in the floor, rooms in the floor will be marked with red border if they are not available either at the requested time or if no customer is chosen, or if their capacity is lower than needed, rooms with green border are valid for the time and capacity and can be reserved.
 ![Reservation1](Images/Reservation1.jpg)</br>
 Reservation - Credit card dummy interface
 ![Reservation2](Images/Reservation2.jpg)</br>
 Reservation - Room reserved
 ![Reservation3](Images/Reservation3.jpg)</br>
+Reservation - Output reservation confirmation PDF 
+![Reservation4](Images/ReservationForm.jpg)</br>
 
-
-
+Reports - Available reports, customer specific reports requires choosing them in the customers screen.
+![Reports1](Images/Reports.jpg)</br>
+Reports - Reservation report example for date range.
+![Reports1](Images/ReservationReport.jpg)</br>
