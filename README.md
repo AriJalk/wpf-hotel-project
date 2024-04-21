@@ -29,7 +29,8 @@ Reservations are customer-oriented and the room selection is done through a visu
 - **Floor View:** Choose a floor.
 ![Floor](Images/FloorView.jpg)
 
-- **Reservation:** Choose an available room on the floor. Rooms will be marked with a red border if they are not available at the requested time, if no customer is chosen, or if their capacity is lower than needed. Rooms with a green border are valid for the time and capacity and can be reserved.
+- **Reservation:** Choose an available room on the floor. Rooms will be marked with a red border if they are not available at the requested time, if no customer is chosen, or if their capacity is lower than needed. Rooms with a green border are valid for the time and capacity and can be reserved.</br>
+Cost is calculated based on easily customizable parameters in code for policy, and service menu to adjust prices. Weekdays and Weekends can have different rates and calculated based on dates so an order could be a combination of different costs for different days.</br>
 ![Reservation1](Images/Reservation1.jpg)
 
 - **Reservation:** Credit card dummy interface.
