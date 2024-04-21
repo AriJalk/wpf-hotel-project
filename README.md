@@ -19,7 +19,7 @@ Reservations are customer-oriented and the room selection is done through a visu
 
 #### Images
 
-**Login**
+**Login** (To the right and blurred is an RSS feed, changable from code, blurred in the images since it's a news feed and might be triggering)</br></br>
 ![Login](Images/Login.jpg)
 
 **Reservation Process**
