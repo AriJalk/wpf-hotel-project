@@ -14,7 +14,7 @@ The code and visuals in this repository are for viewing purposes only. They are 
 * Username: worker | Password: pass3 | Role: Worker
 
 #### Information:
-This is a hotel reservation software developed in .NET WPF with SQL Database integration. The database in the repository is stored locally as a MSAccess file, but it can be quickly changed to use an SQL server. The application follows the MVVM architecture.
+This is a hotel reservation software developed in .NET WPF (C#) with SQL Database integration. The database in the repository is stored locally as a MSAccess file, but it can be quickly changed to use an SQL server. The application follows the MVVM architecture.
 Reservations are customer-oriented and the room selection is done through a visual representation of the hotel floors vertically and horizontally (Floors and rooms in each floor).
 
 #### Images
