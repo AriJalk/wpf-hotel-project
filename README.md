@@ -6,8 +6,6 @@
 
 The code and visuals in this repository are for viewing purposes only. They are not intended for commercial use or redistribution without permission.
 
-#### Rebuilt project to allow the XAML graphic editor to work.
-
 #### Login data:
 * Username: arij | Password: pass1 | Role: Admin
 * Username: ayelet | Password: pass2 | Role: Manager
@@ -53,10 +51,9 @@ Cost is calculated based on easily customizable parameters in code for policy, a
 * Developing the software in MVVM architecture without using code-behind required learning some more advanced binding techniques, especially when dealing with DataTables and custom UI elements.
 * Creating a single-window application with changing panels while trying to decouple the screens from each other posed challenges, especially when some screens needed information from others.
 
-#### What I Would Have Done Differently
-* More use of design patterns to solve some issues more elegantly.
-* Designing the SQL <-> C# process from scratch using composition of SQL abstraction modules instead of inheritance chains, which made the code messy.
-* More composition over inheritance in general.
-* Better separation of concerns, especially in the core ViewModels of the screens.
-* Cleaner SQL reading with an abstraction for more fine-grained control over reading and making SQL reading a non-blocking async operation for scalability.
-* Modularizing parts with similar logic for reusability.
+#### What I Would Have Done Differently (Revised 2025)
+* Made better use of design patterns and eliminated anti-patterns — for example, accessing global state like the selected customer through a singleton worked, but it was messy and fragile.
+* Built a cleaner and more robust ORM (or simply used an existing one like EF Core). While my custom solution worked, it relied on class inheritance and manual field definitions, which made the code harder to maintain.
+* Applied Clean Architecture principles by extracting the service layer out of the ViewModels, introducing Dependency Injection, and adhering more strictly to SOLID principles.
+* Preferred composition over inheritance in more areas.
+* Used asynchronous programming to improve responsiveness — although the app is fairly responsive, it hangs during heavy data loads and would benefit from async operations.
